@@ -26,11 +26,11 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.GoRaceButton = new System.Windows.Forms.Button();
             this.TicketPanel = new System.Windows.Forms.Panel();
+            this.ORALabel = new System.Windows.Forms.Label();
             this.HouseNameLabel = new System.Windows.Forms.Label();
             this.BetLabel = new System.Windows.Forms.Label();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
             this.BetTypeLabel = new System.Windows.Forms.Label();
-            this.ORALabel = new System.Windows.Forms.Label();
             this.TicketPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.TitleLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.TitleLabel.Location = new System.Drawing.Point(89, 19);
+            this.TitleLabel.Location = new System.Drawing.Point(25, 20);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(314, 48);
             this.TitleLabel.TabIndex = 12;
@@ -70,6 +70,16 @@
             this.TicketPanel.Name = "TicketPanel";
             this.TicketPanel.Size = new System.Drawing.Size(375, 212);
             this.TicketPanel.TabIndex = 14;
+            // 
+            // ORALabel
+            // 
+            this.ORALabel.AutoSize = true;
+            this.ORALabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ORALabel.Location = new System.Drawing.Point(9, 180);
+            this.ORALabel.Name = "ORALabel";
+            this.ORALabel.Size = new System.Drawing.Size(26, 12);
+            this.ORALabel.TabIndex = 5;
+            this.ORALabel.Text = "ORA";
             // 
             // HouseNameLabel
             // 
@@ -113,16 +123,6 @@
             this.BetTypeLabel.TabIndex = 0;
             this.BetTypeLabel.Text = "単\n勝";
             // 
-            // ORALabel
-            // 
-            this.ORALabel.AutoSize = true;
-            this.ORALabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ORALabel.Location = new System.Drawing.Point(9, 180);
-            this.ORALabel.Name = "ORALabel";
-            this.ORALabel.Size = new System.Drawing.Size(26, 12);
-            this.ORALabel.TabIndex = 5;
-            this.ORALabel.Text = "ORA";
-            // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -133,7 +133,7 @@
             this.Controls.Add(this.GoRaceButton);
             this.Controls.Add(this.TitleLabel);
             this.Name = "TicketForm";
-            this.Text = "TicketForm";
+            this.Text = "ポケットダービー";
             this.TicketPanel.ResumeLayout(false);
             this.TicketPanel.PerformLayout();
             this.ResumeLayout(false);

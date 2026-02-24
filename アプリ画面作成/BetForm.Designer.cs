@@ -28,15 +28,20 @@
             this.ConfirmButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.TitleLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.HorsePictureBox = new System.Windows.Forms.PictureBox();
             this.BetNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.HorseNameLabel = new System.Windows.Forms.Label();
             this.PayoutLabel = new System.Windows.Forms.Label();
             this.PayoutValueLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.SpeedLabel = new System.Windows.Forms.Label();
+            this.LuckLabel = new System.Windows.Forms.Label();
+            this.OddsLabel = new System.Windows.Forms.Label();
+            this.SpeedValueLabel = new System.Windows.Forms.Label();
+            this.LuckValueLabel = new System.Windows.Forms.Label();
+            this.OddsValueLabel = new System.Windows.Forms.Label();
+            this.TableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +50,7 @@
             // 
             this.CurrentMoneyLabel.AutoSize = true;
             this.CurrentMoneyLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CurrentMoneyLabel.Location = new System.Drawing.Point(53, 446);
+            this.CurrentMoneyLabel.Location = new System.Drawing.Point(49, 459);
             this.CurrentMoneyLabel.Name = "CurrentMoneyLabel";
             this.CurrentMoneyLabel.Size = new System.Drawing.Size(312, 37);
             this.CurrentMoneyLabel.TabIndex = 3;
@@ -91,44 +96,45 @@
             this.HorseNumberLabel.TabIndex = 9;
             this.HorseNumberLabel.Text = "② ";
             // 
-            // tableLayoutPanel1
+            // TableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(419, 132);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(236, 111);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.TableLayoutPanel.ColumnCount = 2;
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.TableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanel.Controls.Add(this.OddsValueLabel, 1, 2);
+            this.TableLayoutPanel.Controls.Add(this.LuckValueLabel, 1, 1);
+            this.TableLayoutPanel.Controls.Add(this.SpeedValueLabel, 1, 0);
+            this.TableLayoutPanel.Controls.Add(this.SpeedLabel, 0, 0);
+            this.TableLayoutPanel.Controls.Add(this.LuckLabel, 0, 1);
+            this.TableLayoutPanel.Controls.Add(this.OddsLabel, 0, 2);
+            this.TableLayoutPanel.Location = new System.Drawing.Point(419, 146);
+            this.TableLayoutPanel.Name = "TableLayoutPanel";
+            this.TableLayoutPanel.RowCount = 3;
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableLayoutPanel.Size = new System.Drawing.Size(236, 111);
+            this.TableLayoutPanel.TabIndex = 10;
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.TitleLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.TitleLabel.Location = new System.Drawing.Point(25, 21);
+            this.TitleLabel.Location = new System.Drawing.Point(25, 20);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(608, 48);
             this.TitleLabel.TabIndex = 11;
             this.TitleLabel.Text = "掛け金を入力してください";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.HorsePictureBox);
-            this.panel1.Location = new System.Drawing.Point(72, 112);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(117, 100);
-            this.panel1.TabIndex = 12;
-            // 
             // HorsePictureBox
             // 
-            this.HorsePictureBox.Location = new System.Drawing.Point(3, 3);
+            this.HorsePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.HorsePictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
+            this.HorsePictureBox.Location = new System.Drawing.Point(75, 110);
             this.HorsePictureBox.Name = "HorsePictureBox";
-            this.HorsePictureBox.Size = new System.Drawing.Size(111, 94);
+            this.HorsePictureBox.Size = new System.Drawing.Size(100, 100);
+            this.HorsePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.HorsePictureBox.TabIndex = 0;
             this.HorsePictureBox.TabStop = false;
             // 
@@ -175,18 +181,85 @@
             this.PayoutValueLabel.TabIndex = 15;
             this.PayoutValueLabel.Text = "10000円";
             // 
+            // SpeedLabel
+            // 
+            this.SpeedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpeedLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SpeedLabel.Location = new System.Drawing.Point(3, 0);
+            this.SpeedLabel.Name = "SpeedLabel";
+            this.SpeedLabel.Size = new System.Drawing.Size(124, 36);
+            this.SpeedLabel.TabIndex = 0;
+            this.SpeedLabel.Text = "スピード";
+            this.SpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LuckLabel
+            // 
+            this.LuckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LuckLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LuckLabel.Location = new System.Drawing.Point(3, 36);
+            this.LuckLabel.Name = "LuckLabel";
+            this.LuckLabel.Size = new System.Drawing.Size(124, 36);
+            this.LuckLabel.TabIndex = 1;
+            this.LuckLabel.Text = "運の良さ";
+            this.LuckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OddsLabel
+            // 
+            this.OddsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OddsLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.OddsLabel.Location = new System.Drawing.Point(3, 72);
+            this.OddsLabel.Name = "OddsLabel";
+            this.OddsLabel.Size = new System.Drawing.Size(124, 39);
+            this.OddsLabel.TabIndex = 2;
+            this.OddsLabel.Text = "オッズ";
+            this.OddsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SpeedValueLabel
+            // 
+            this.SpeedValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpeedValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SpeedValueLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SpeedValueLabel.Location = new System.Drawing.Point(133, 0);
+            this.SpeedValueLabel.Name = "SpeedValueLabel";
+            this.SpeedValueLabel.Size = new System.Drawing.Size(100, 36);
+            this.SpeedValueLabel.TabIndex = 3;
+            this.SpeedValueLabel.Text = "65";
+            this.SpeedValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // LuckValueLabel
+            // 
+            this.LuckValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LuckValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LuckValueLabel.Location = new System.Drawing.Point(133, 36);
+            this.LuckValueLabel.Name = "LuckValueLabel";
+            this.LuckValueLabel.Size = new System.Drawing.Size(100, 36);
+            this.LuckValueLabel.TabIndex = 4;
+            this.LuckValueLabel.Text = "90";
+            this.LuckValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // OddsValueLabel
+            // 
+            this.OddsValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OddsValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.OddsValueLabel.Location = new System.Drawing.Point(133, 72);
+            this.OddsValueLabel.Name = "OddsValueLabel";
+            this.OddsValueLabel.Size = new System.Drawing.Size(100, 39);
+            this.OddsValueLabel.TabIndex = 5;
+            this.OddsValueLabel.Text = "5.2";
+            this.OddsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // BetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.HorsePictureBox);
             this.Controls.Add(this.PayoutValueLabel);
             this.Controls.Add(this.PayoutLabel);
             this.Controls.Add(this.HorseNameLabel);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TitleLabel);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.TableLayoutPanel);
             this.Controls.Add(this.HorseNumberLabel);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.ConfirmButton);
@@ -194,8 +267,8 @@
             this.Controls.Add(this.BetNumericUpDown);
             this.Controls.Add(this.CurrentMoneyLabel);
             this.Name = "BetForm";
-            this.Text = "あ";
-            this.panel1.ResumeLayout(false);
+            this.Text = "ポケットダービー";
+            this.TableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetNumericUpDown)).EndInit();
             this.ResumeLayout(false);
@@ -209,13 +282,18 @@
         private System.Windows.Forms.Button ConfirmButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Label HorseNumberLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutPanel;
         private System.Windows.Forms.Label TitleLabel;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox HorsePictureBox;
         private System.Windows.Forms.NumericUpDown BetNumericUpDown;
         private System.Windows.Forms.Label HorseNameLabel;
         private System.Windows.Forms.Label PayoutLabel;
         private System.Windows.Forms.Label PayoutValueLabel;
+        private System.Windows.Forms.Label SpeedLabel;
+        private System.Windows.Forms.Label LuckLabel;
+        private System.Windows.Forms.Label OddsLabel;
+        private System.Windows.Forms.Label OddsValueLabel;
+        private System.Windows.Forms.Label LuckValueLabel;
+        private System.Windows.Forms.Label SpeedValueLabel;
     }
 }

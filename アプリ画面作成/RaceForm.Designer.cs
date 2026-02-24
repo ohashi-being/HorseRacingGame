@@ -23,253 +23,203 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.TrackPanel = new System.Windows.Forms.Panel();
+            this.GoalPanel = new System.Windows.Forms.Panel();
+            this.Lane5Panel = new System.Windows.Forms.Panel();
+            this.Horse5PictureBox = new System.Windows.Forms.PictureBox();
+            this.Lane4Panel = new System.Windows.Forms.Panel();
+            this.Horse4PictureBox = new System.Windows.Forms.PictureBox();
+            this.Lane3Panel = new System.Windows.Forms.Panel();
+            this.Horse3PictureBox = new System.Windows.Forms.PictureBox();
+            this.Lane2Panel = new System.Windows.Forms.Panel();
+            this.Horse2PictureBox = new System.Windows.Forms.PictureBox();
+            this.Lane1Panel = new System.Windows.Forms.Panel();
+            this.Horse1PictureBox = new System.Windows.Forms.PictureBox();
+            this.TrapLabel = new System.Windows.Forms.Label();
+            this.TicketPanel = new System.Windows.Forms.Panel();
             this.ORALabel = new System.Windows.Forms.Label();
             this.HouseNameLabel = new System.Windows.Forms.Label();
             this.BetLabel = new System.Windows.Forms.Label();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
             this.BetTypeLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.TrackPanel.SuspendLayout();
+            this.Lane5Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Horse5PictureBox)).BeginInit();
+            this.Lane4Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Horse4PictureBox)).BeginInit();
+            this.Lane3Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Horse3PictureBox)).BeginInit();
+            this.Lane2Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Horse2PictureBox)).BeginInit();
+            this.Lane1Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Horse1PictureBox)).BeginInit();
+            this.TicketPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // TrackPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 350);
-            this.panel1.TabIndex = 0;
+            this.TrackPanel.BackColor = System.Drawing.Color.Green;
+            this.TrackPanel.Controls.Add(this.GoalPanel);
+            this.TrackPanel.Controls.Add(this.Lane5Panel);
+            this.TrackPanel.Controls.Add(this.Lane4Panel);
+            this.TrackPanel.Controls.Add(this.Lane3Panel);
+            this.TrackPanel.Controls.Add(this.Lane2Panel);
+            this.TrackPanel.Controls.Add(this.Lane1Panel);
+            this.TrackPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TrackPanel.Location = new System.Drawing.Point(0, 0);
+            this.TrackPanel.Name = "TrackPanel";
+            this.TrackPanel.Size = new System.Drawing.Size(784, 350);
+            this.TrackPanel.TabIndex = 0;
             // 
-            // panel7
+            // GoalPanel
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(690, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 350);
-            this.panel7.TabIndex = 6;
+            this.GoalPanel.BackColor = System.Drawing.Color.White;
+            this.GoalPanel.Location = new System.Drawing.Point(690, 0);
+            this.GoalPanel.Name = "GoalPanel";
+            this.GoalPanel.Size = new System.Drawing.Size(2, 350);
+            this.GoalPanel.TabIndex = 6;
             // 
-            // panel4
+            // Lane5Panel
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.panel12);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 280);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(784, 70);
-            this.panel4.TabIndex = 2;
+            this.Lane5Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Lane5Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lane5Panel.Controls.Add(this.Horse5PictureBox);
+            this.Lane5Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lane5Panel.Location = new System.Drawing.Point(0, 280);
+            this.Lane5Panel.Name = "Lane5Panel";
+            this.Lane5Panel.Size = new System.Drawing.Size(784, 70);
+            this.Lane5Panel.TabIndex = 2;
             // 
-            // panel12
+            // Horse5PictureBox
             // 
-            this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.Controls.Add(this.pictureBox4);
-            this.panel12.Location = new System.Drawing.Point(20, 6);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(60, 60);
-            this.panel12.TabIndex = 6;
+            this.Horse5PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Horse5PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_34;
+            this.Horse5PictureBox.Location = new System.Drawing.Point(20, 2);
+            this.Horse5PictureBox.Name = "Horse5PictureBox";
+            this.Horse5PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Horse5PictureBox.Size = new System.Drawing.Size(66, 66);
+            this.Horse5PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Horse5PictureBox.TabIndex = 1;
+            this.Horse5PictureBox.TabStop = false;
             // 
-            // pictureBox4
+            // Lane4Panel
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_34;
-            this.pictureBox4.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
+            this.Lane4Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Lane4Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lane4Panel.Controls.Add(this.Horse4PictureBox);
+            this.Lane4Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lane4Panel.Location = new System.Drawing.Point(0, 210);
+            this.Lane4Panel.Name = "Lane4Panel";
+            this.Lane4Panel.Size = new System.Drawing.Size(784, 70);
+            this.Lane4Panel.TabIndex = 1;
             // 
-            // panel3
+            // Horse4PictureBox
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.panel11);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 210);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 70);
-            this.panel3.TabIndex = 1;
+            this.Horse4PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Horse4PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_311;
+            this.Horse4PictureBox.Location = new System.Drawing.Point(20, 2);
+            this.Horse4PictureBox.Name = "Horse4PictureBox";
+            this.Horse4PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Horse4PictureBox.Size = new System.Drawing.Size(66, 66);
+            this.Horse4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Horse4PictureBox.TabIndex = 1;
+            this.Horse4PictureBox.TabStop = false;
             // 
-            // panel11
+            // Lane3Panel
             // 
-            this.panel11.BackColor = System.Drawing.Color.Transparent;
-            this.panel11.Controls.Add(this.pictureBox3);
-            this.panel11.Location = new System.Drawing.Point(20, 6);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(60, 60);
-            this.panel11.TabIndex = 6;
+            this.Lane3Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Lane3Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lane3Panel.Controls.Add(this.Horse3PictureBox);
+            this.Lane3Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lane3Panel.Location = new System.Drawing.Point(0, 140);
+            this.Lane3Panel.Name = "Lane3Panel";
+            this.Lane3Panel.Size = new System.Drawing.Size(784, 70);
+            this.Lane3Panel.TabIndex = 4;
             // 
-            // pictureBox3
+            // Horse3PictureBox
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_311;
-            this.pictureBox3.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.Horse3PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Horse3PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_32;
+            this.Horse3PictureBox.Location = new System.Drawing.Point(20, 2);
+            this.Horse3PictureBox.Name = "Horse3PictureBox";
+            this.Horse3PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Horse3PictureBox.Size = new System.Drawing.Size(66, 66);
+            this.Horse3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Horse3PictureBox.TabIndex = 1;
+            this.Horse3PictureBox.TabStop = false;
             // 
-            // panel6
+            // Lane2Panel
             // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.Controls.Add(this.panel10);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 140);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(784, 70);
-            this.panel6.TabIndex = 4;
+            this.Lane2Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Lane2Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lane2Panel.Controls.Add(this.Horse2PictureBox);
+            this.Lane2Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lane2Panel.Location = new System.Drawing.Point(0, 70);
+            this.Lane2Panel.Name = "Lane2Panel";
+            this.Lane2Panel.Size = new System.Drawing.Size(784, 70);
+            this.Lane2Panel.TabIndex = 3;
             // 
-            // panel10
+            // Horse2PictureBox
             // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.pictureBox2);
-            this.panel10.Location = new System.Drawing.Point(20, 6);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(60, 60);
-            this.panel10.TabIndex = 6;
+            this.Horse2PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Horse2PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
+            this.Horse2PictureBox.Location = new System.Drawing.Point(20, 2);
+            this.Horse2PictureBox.Name = "Horse2PictureBox";
+            this.Horse2PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Horse2PictureBox.Size = new System.Drawing.Size(66, 66);
+            this.Horse2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Horse2PictureBox.TabIndex = 1;
+            this.Horse2PictureBox.TabStop = false;
             // 
-            // pictureBox2
+            // Lane1Panel
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_32;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.Lane1Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Lane1Panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lane1Panel.Controls.Add(this.Horse1PictureBox);
+            this.Lane1Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lane1Panel.Location = new System.Drawing.Point(0, 0);
+            this.Lane1Panel.Name = "Lane1Panel";
+            this.Lane1Panel.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Lane1Panel.Size = new System.Drawing.Size(784, 70);
+            this.Lane1Panel.TabIndex = 0;
             // 
-            // panel5
+            // Horse1PictureBox
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.panel9);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 70);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(784, 70);
-            this.panel5.TabIndex = 3;
+            this.Horse1PictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.Horse1PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_33_22;
+            this.Horse1PictureBox.Location = new System.Drawing.Point(20, 2);
+            this.Horse1PictureBox.Name = "Horse1PictureBox";
+            this.Horse1PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
+            this.Horse1PictureBox.Size = new System.Drawing.Size(66, 66);
+            this.Horse1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Horse1PictureBox.TabIndex = 1;
+            this.Horse1PictureBox.TabStop = false;
             // 
-            // panel9
+            // TrapLabel
             // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.pictureBox6);
-            this.panel9.Location = new System.Drawing.Point(20, 6);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(60, 60);
-            this.panel9.TabIndex = 6;
+            this.TrapLabel.AutoSize = true;
+            this.TrapLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TrapLabel.Location = new System.Drawing.Point(41, 363);
+            this.TrapLabel.Name = "TrapLabel";
+            this.TrapLabel.Size = new System.Drawing.Size(433, 27);
+            this.TrapLabel.TabIndex = 5;
+            this.TrapLabel.Text = "おっと！3番の馬の気性が荒い！";
             // 
-            // pictureBox6
+            // TicketPanel
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
-            this.pictureBox6.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.pictureBox6.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.panel2.Size = new System.Drawing.Size(784, 70);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Location = new System.Drawing.Point(20, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(60, 60);
-            this.panel8.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_33_22;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(41, 363);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(433, 27);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "おっと！3番の馬の気性が荒い！";
-            // 
-            // panel13
-            // 
-            this.panel13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.ORALabel);
-            this.panel13.Controls.Add(this.HouseNameLabel);
-            this.panel13.Controls.Add(this.BetLabel);
-            this.panel13.Controls.Add(this.HorseNumberLabel);
-            this.panel13.Controls.Add(this.BetTypeLabel);
-            this.panel13.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.panel13.Location = new System.Drawing.Point(470, 382);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(268, 141);
-            this.panel13.TabIndex = 16;
+            this.TicketPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TicketPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TicketPanel.Controls.Add(this.ORALabel);
+            this.TicketPanel.Controls.Add(this.HouseNameLabel);
+            this.TicketPanel.Controls.Add(this.BetLabel);
+            this.TicketPanel.Controls.Add(this.HorseNumberLabel);
+            this.TicketPanel.Controls.Add(this.BetTypeLabel);
+            this.TicketPanel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TicketPanel.Location = new System.Drawing.Point(470, 382);
+            this.TicketPanel.Name = "TicketPanel";
+            this.TicketPanel.Size = new System.Drawing.Size(268, 141);
+            this.TicketPanel.TabIndex = 16;
             // 
             // ORALabel
             // 
@@ -329,29 +279,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.TicketPanel);
+            this.Controls.Add(this.TrapLabel);
+            this.Controls.Add(this.TrackPanel);
             this.Name = "RaceForm";
-            this.Text = "RaceForm";
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
+            this.Text = "ポケットダービー";
+            this.TrackPanel.ResumeLayout(false);
+            this.Lane5Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Horse5PictureBox)).EndInit();
+            this.Lane4Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Horse4PictureBox)).EndInit();
+            this.Lane3Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Horse3PictureBox)).EndInit();
+            this.Lane2Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Horse2PictureBox)).EndInit();
+            this.Lane1Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Horse1PictureBox)).EndInit();
+            this.TicketPanel.ResumeLayout(false);
+            this.TicketPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,25 +304,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel TrackPanel;
+        private System.Windows.Forms.Panel Lane3Panel;
+        private System.Windows.Forms.Panel Lane2Panel;
+        private System.Windows.Forms.Panel Lane5Panel;
+        private System.Windows.Forms.Panel Lane4Panel;
+        private System.Windows.Forms.Panel Lane1Panel;
+        private System.Windows.Forms.Label TrapLabel;
+        private System.Windows.Forms.Panel GoalPanel;
+        private System.Windows.Forms.PictureBox Horse1PictureBox;
+        private System.Windows.Forms.PictureBox Horse2PictureBox;
+        private System.Windows.Forms.PictureBox Horse5PictureBox;
+        private System.Windows.Forms.PictureBox Horse4PictureBox;
+        private System.Windows.Forms.PictureBox Horse3PictureBox;
+        private System.Windows.Forms.Panel TicketPanel;
         private System.Windows.Forms.Label ORALabel;
         private System.Windows.Forms.Label HouseNameLabel;
         private System.Windows.Forms.Label BetLabel;
