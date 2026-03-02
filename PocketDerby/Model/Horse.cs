@@ -10,26 +10,34 @@
         /// <summary>
         /// 馬名
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; }
         /// <summary>
         /// 運の良さ
         /// </summary>
-        public int Luck { get; set; }
+        public int Luck { get; }
         /// <summary>
         /// スピード
         /// </summary>
-        public int Speed { get; set; }
+        public int Speed { get; }
         /// <summary>
         /// オッズ
         /// </summary>
-        public double Odds { get; set; }
+        public double Odds { get; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="vNumber">馬番</param>
-        public Horse(int vNumber) {
+        /// <param name="vName">馬名</param>
+        /// <param name="vLuck">運の良さ</param>
+        /// <param name="vSpeed">スピード</param>
+        /// <param name="vOdds">オッズ</param>
+        public Horse(int vNumber, string vName, int vLuck, int vSpeed, double vOdds) {
             this.Number = vNumber;
+            this.Name = vName;
+            this.Luck = vLuck;
+            this.Speed = vSpeed;
+            this.Odds = vOdds;
         }
 
     }
