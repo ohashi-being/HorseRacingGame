@@ -64,6 +64,7 @@
     <Compile Include="HorseSelectForm.Designer.cs">
       <DependentUpon>HorseSelectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\PlayerMoney.cs" />
     <Compile Include="RaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
