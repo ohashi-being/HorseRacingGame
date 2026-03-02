@@ -25,9 +25,15 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 馬名候補リストからランダムに重複なく名前を取得する
         /// </summary>
-        /// <param name="vCount">取得する馬名の数※今回の実装では5が入る</param>
+        /// <param name="vCount">取得する馬名の数</param>
         /// <returns>馬名リスト</returns>
         public static List<string> GetRandomNames(int vCount) {
+            if (vCount < 1 || vCount > FHorseNameList.Count) {
+                throw new ArgumentOutOfRangeException(
+                    nameof(vCount),
+                    vCount,
+                    $"取得する馬名の数は1以上{FHorseNameList.Count}以下である必要があります。");
+            }
             var wRandom = new Random();
             var wShuffledNameList = new List<string>(FHorseNameList);
             for (int i = wShuffledNameList.Count - 1 ; i > 0 ; i--) {
