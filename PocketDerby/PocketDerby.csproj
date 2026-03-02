@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{11965A15-C1B4-4FD3-9864-C3FDEE6FDE1D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>アプリ画面作成</RootNamespace>
+    <RootNamespace>PocketDerby</RootNamespace>
     <AssemblyName>アプリ画面作成</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

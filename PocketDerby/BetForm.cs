@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace アプリ画面作成 {
-    public partial class ResultForm : Form {
-        public ResultForm() {
+namespace PocketDerby {
+    public partial class BetForm : Form {
+        public BetForm() {
             InitializeComponent();
         }
     }

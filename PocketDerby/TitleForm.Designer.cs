@@ -1,4 +1,4 @@
-﻿namespace アプリ画面作成 {
+﻿namespace PocketDerby {
     partial class TitleForm {
         /// <summary>
         /// 必要なデザイナー変数です。
