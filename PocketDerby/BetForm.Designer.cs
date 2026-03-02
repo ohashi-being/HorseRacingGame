@@ -1,4 +1,4 @@
-﻿namespace アプリ画面作成 {
+﻿namespace PocketDerby {
     partial class BetForm {
         /// <summary>
         /// Required designer variable.
@@ -130,7 +130,7 @@
             // HorsePictureBox
             // 
             this.HorsePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.HorsePictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
+            this.HorsePictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
             this.HorsePictureBox.Location = new System.Drawing.Point(75, 110);
             this.HorsePictureBox.Name = "HorsePictureBox";
             this.HorsePictureBox.Size = new System.Drawing.Size(100, 100);

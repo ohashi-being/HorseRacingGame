@@ -1,4 +1,4 @@
-﻿namespace アプリ画面作成 {
+﻿namespace PocketDerby {
     partial class RaceForm {
         /// <summary>
         /// Required designer variable.
@@ -93,7 +93,7 @@
             // Horse5PictureBox
             // 
             this.Horse5PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse5PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_34;
+            this.Horse5PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_34;
             this.Horse5PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse5PictureBox.Name = "Horse5PictureBox";
             this.Horse5PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -116,7 +116,7 @@
             // Horse4PictureBox
             // 
             this.Horse4PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse4PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_311;
+            this.Horse4PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_311;
             this.Horse4PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse4PictureBox.Name = "Horse4PictureBox";
             this.Horse4PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -139,7 +139,7 @@
             // Horse3PictureBox
             // 
             this.Horse3PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse3PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_32;
+            this.Horse3PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_32;
             this.Horse3PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse3PictureBox.Name = "Horse3PictureBox";
             this.Horse3PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -162,7 +162,7 @@
             // Horse2PictureBox
             // 
             this.Horse2PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse2PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
+            this.Horse2PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
             this.Horse2PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse2PictureBox.Name = "Horse2PictureBox";
             this.Horse2PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -186,7 +186,7 @@
             // Horse1PictureBox
             // 
             this.Horse1PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse1PictureBox.Image = global::アプリ画面作成.Properties.Resources.ChatGPT_Image_2026年2月9日_10_33_22;
+            this.Horse1PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_33_22;
             this.Horse1PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse1PictureBox.Name = "Horse1PictureBox";
             this.Horse1PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
