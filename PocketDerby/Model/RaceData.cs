@@ -55,7 +55,7 @@ namespace PocketDerby.Model {
 
             ValidateArguments(vHorses, vSelectedHorse, vBetAmount);
 
-            this.Horses = vHorses;
+            this.Horses = new List<Horse>(vHorses).AsReadOnly();
             this.SelectedHorse = vSelectedHorse;
             this.BetAmount = vBetAmount;
             this.HorsePositions = vHorses.ToDictionary(x => x.Number, horse => C_StartPosition);
