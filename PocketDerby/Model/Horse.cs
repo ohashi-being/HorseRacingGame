@@ -22,7 +22,7 @@
         /// <summary>
         /// オッズ
         /// </summary>
-        public double Odds { get; }
+        public double Odds { get; set; }
 
         /// <summary>
         /// コンストラクタ
@@ -31,13 +31,12 @@
         /// <param name="vName">馬名</param>
         /// <param name="vLuck">運の良さ</param>
         /// <param name="vSpeed">スピード</param>
-        /// <param name="vOdds">オッズ</param>
-        public Horse(int vNumber, string vName, int vLuck, int vSpeed, double vOdds) {
+        public Horse(int vNumber, string vName, int vLuck, int vSpeed) {
             this.Number = vNumber;
             this.Name = vName;
             this.Luck = vLuck;
             this.Speed = vSpeed;
-            this.Odds = vOdds;
+            this.Odds = 0.0;
         }
 
     }
