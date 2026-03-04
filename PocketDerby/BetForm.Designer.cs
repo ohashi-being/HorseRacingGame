@@ -64,7 +64,7 @@
             this.BetLabel.Name = "BetLabel";
             this.BetLabel.Size = new System.Drawing.Size(134, 37);
             this.BetLabel.TabIndex = 5;
-            this.BetLabel.Text = "掛け金";
+            this.BetLabel.Text = "賭け金";
             // 
             // ConfirmButton
             // 
@@ -125,7 +125,7 @@
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(608, 48);
             this.TitleLabel.TabIndex = 11;
-            this.TitleLabel.Text = "掛け金を入力してください";
+            this.TitleLabel.Text = "賭け金を入力してください";
             // 
             // HorsePictureBox
             // 

@@ -22,7 +22,7 @@ namespace PocketDerby.Model {
         /// </summary>
         public Horse SelectedHorse { get; }
         /// <summary>
-        /// 掛け金
+        /// 賭け金
         /// </summary>
         public int BetAmount { get; }
         /// <summary>
@@ -50,7 +50,7 @@ namespace PocketDerby.Model {
         /// </summary>
         /// <param name="vHorses">出走馬一覧</param>
         /// <param name="vSelectedHorse">選択した馬</param>
-        /// <param name="vBetAmount">掛け金</param>
+        /// <param name="vBetAmount">賭け金</param>
         public RaceData(List<Horse> vHorses, Horse vSelectedHorse, int vBetAmount) {
 
             ValidateArguments(vHorses, vSelectedHorse, vBetAmount);
@@ -76,7 +76,7 @@ namespace PocketDerby.Model {
                 throw new ArgumentException("選択した馬が出走馬に含まれていません。", nameof(vSelectedHorse));
             }
             if (vBetAmount < 100) {
-                throw new ArgumentOutOfRangeException(nameof(vBetAmount), vBetAmount, "掛け金は100円以上である必要があります。");
+                throw new ArgumentOutOfRangeException(nameof(vBetAmount), vBetAmount, "賭け金は100円以上である必要があります。");
             }
         }
     }
