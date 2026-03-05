@@ -56,64 +56,51 @@ namespace PocketDerby.Model {
             if (this.IsRaceRunning) {
                 throw new InvalidOperationException("レースは既に開始されています。");
             }
-
-            this.FFinishOrder.Clear();
-            this.FCurrentRank = 1;
             this.IsRaceRunning = true;
-            foreach (var wHorseNumber in this.FRaceData.HorsePositions.Keys.ToList()) {
-                this.FRaceData.HorsePositions[wHorseNumber] = 0.0;
-            }
         }
 
         /// <summary>
         /// レース状態を1ステップ進める
         /// </summary>
-        /// <returns>全馬がゴールしていればtrue、そうでなければfalse/returns>
-        public bool UpdateRaceState() {
-            if (!this.IsRaceRunning) {
-                return true;
+        public void AdvancedRace() {
+
+            if (!this.IsRaceRunning) return;
+
+            foreach (var wHorse in this.FRaceData.Horses) {
+                if (this.FFinishOrder.ContainsKey(wHorse.Number)) continue;
+                UpdatePositions(wHorse);
+                CheckGoals(wHorse);
             }
 
-            UpdatePositions();
-            CheckGoals();
-
-            if (this.FFinishOrder.Count == this.FRaceData.Horses.Count) {
-                EndRace();
-                return true;
-            }
-            return false;
+            if (this.FFinishOrder.Count == this.FRaceData.Horses.Count) EndRace();
         }
 
         /// <summary>
-        /// 各馬の現在位置を更新する
+        /// 指定された馬の現在位置を更新する
         /// </summary>
-        private void UpdatePositions() {
-            foreach (var wHorse in this.FRaceData.Horses) {
-                if (this.FFinishOrder.ContainsKey(wHorse.Number)) continue;
+        /// <param name="vHorse">対象の馬</param>
+        private void UpdatePositions(Horse vHorse) {
 
-                double wCurrentPosition = this.FRaceData.HorsePositions[wHorse.Number];
-                // 現時点では、トラップでの補正はない
-                double wNewPosition = wCurrentPosition + ( wHorse.Speed * C_PositionCoefficient );
+            double wCurrentPosition = this.FRaceData.HorsePositions[vHorse.Number];
 
-                if (wNewPosition > C_GoalPosition) {
-                    wNewPosition = C_GoalPosition;
-                }
+            // 現時点では、トラップでの補正はない
+            double wNewPosition = wCurrentPosition + ( vHorse.Speed * C_PositionCoefficient );
 
-                this.FRaceData.HorsePositions[wHorse.Number] = wNewPosition;
+            if (wNewPosition > C_GoalPosition) {
+                wNewPosition = C_GoalPosition;
             }
+
+            this.FRaceData.HorsePositions[vHorse.Number] = wNewPosition;
         }
 
         /// <summary>
-        /// 各馬の位置を確認し、ゴールしている馬がいれば着順を記録する
+        /// 指定された馬のゴール判定を行い、ゴールしている馬がいれば着順を記録する
         /// </summary>
-        private void CheckGoals() {
-            foreach (var wHorse in this.FRaceData.Horses) {
-                if (this.FFinishOrder.ContainsKey(wHorse.Number)) continue;
-
-                if (this.FRaceData.HorsePositions[wHorse.Number] >= C_GoalPosition) {
-                    this.FFinishOrder[wHorse.Number] = this.FCurrentRank;
-                    this.FCurrentRank++;
-                }
+        /// <param name="vHorse">対象の馬</param>
+        private void CheckGoals(Horse vHorse) {
+            if (this.FRaceData.HorsePositions[vHorse.Number] >= C_GoalPosition) {
+                this.FFinishOrder[vHorse.Number] = this.FCurrentRank;
+                this.FCurrentRank++;
             }
         }
 
