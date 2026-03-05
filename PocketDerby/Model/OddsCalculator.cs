@@ -8,7 +8,7 @@ namespace PocketDerby.Model {
     internal static class OddsCalculator {
 
         /// <summary>
-        /// オッズ係数
+        /// オッズバランス調整用の係数
         /// </summary>
         private const double C_OddsCoefficient = 2.1;
         /// <summary>
@@ -23,8 +23,7 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 全馬のオッズを算出する
         /// </summary>
-        /// <returns>馬番をキーとしたオッズの辞書</returns>
-        public static Dictionary<int, double> CalculateOdds(List<Horse> vHorses) {
+        public static void CalculateOdds(List<Horse> vHorses) {
             if (vHorses == null || vHorses.Count == 0) {
                 throw new ArgumentException("馬のリストが空です。", nameof(vHorses));
             }
@@ -39,13 +38,13 @@ namespace PocketDerby.Model {
 
             double wEffectiveSpeedAverage = wTotalEffectiveSpeed / vHorses.Count;
 
-            var wOddsDict = new Dictionary<int, double>();
             for (int i = 0 ; i < vHorses.Count ; i++) {
+                if (wEffectiveSpeeds[i] <= 0) {
+                    throw new InvalidOperationException($"馬番号{vHorses[i].Number}の実効スピードが0以下です。");
+                }
                 double wRawOdds = ( wEffectiveSpeedAverage / wEffectiveSpeeds[i] ) * C_OddsCoefficient;
-                wOddsDict[vHorses[i].Number] = Math.Max(Math.Round(wRawOdds, 2), C_MinimumOdds);
+                vHorses[i].Odds = Math.Max(Math.Round(wRawOdds, 2), C_MinimumOdds);
             }
-
-            return wOddsDict;
         }
 
         /// <summary>
@@ -53,10 +52,7 @@ namespace PocketDerby.Model {
         /// </summary>
         /// <param name="vHorse">対象の馬</param>
         /// <returns>実効スピード</returns>
-        public static double CalculateEffectiveSpeed(Horse vHorse) {
-            if (vHorse == null) {
-                throw new ArgumentNullException(nameof(vHorse));
-            }
+        private static double CalculateEffectiveSpeed(Horse vHorse) {
             return vHorse.Speed * ( 1 + vHorse.Luck * C_LuckCoefficient );
         }
     }
