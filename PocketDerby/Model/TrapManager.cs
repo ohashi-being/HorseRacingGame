@@ -68,7 +68,7 @@ namespace PocketDerby.Model {
 
             var wTraps = new List<TrapEntity>();
             var wInterval = (C_TrapPositionMax - RaceData.C_StartPosition) / C_CountPerHorse;
-            var wShuffled = Trap.AllTraps.OrderBy(x => random.Next()).ToArray();
+            var wShuffled = Trap.C_AllTraps.OrderBy(x => random.Next()).ToArray();
 
             for (var i = 0 ; i < C_CountPerHorse ; i++) {
                 var wPosition = RaceData.C_StartPosition + wInterval * i + random.NextDouble() * (wInterval - C_MinDistance);
