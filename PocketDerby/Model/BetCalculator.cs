@@ -24,19 +24,19 @@
 
             // 掛け金が所持金を超えた場合
             if (vBetAmount > vPlayerMoney) {
-                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
+                vErrorMessage = $"賭け金は{C_MinBetAmount}円以上{vPlayerMoney}円以下で、{C_BetAmountUnit}円単位で入力してください。";
                 return false;
             }
 
             // 最小賭け金を下回った場合
             if (vBetAmount < C_MinBetAmount) {
-                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
+                vErrorMessage = $"賭け金は{C_MinBetAmount}円以上{vPlayerMoney}円以下で、{C_BetAmountUnit}円単位で入力してください。";
                 return false;
             }
 
             // 賭け金が100円単位でない場合
             if (vBetAmount % C_BetAmountUnit != 0) {
-                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
+                vErrorMessage = $"賭け金は{C_MinBetAmount}円以上{vPlayerMoney}円以下で、{C_BetAmountUnit}円単位で入力してください。";
                 return false;
             }
 
