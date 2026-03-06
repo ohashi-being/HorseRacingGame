@@ -68,6 +68,7 @@
     <Compile Include="Model\Horse.cs" />
     <Compile Include="Model\PlayerMoney.cs" />
     <Compile Include="Model\RaceData.cs" />
+    <Compile Include="Model\Trap.cs" />
     <Compile Include="RaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
