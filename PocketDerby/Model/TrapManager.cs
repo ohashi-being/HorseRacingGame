@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace PocketDerby.Model {
+    /// <summary>
+    /// トラップを管理するクラス
+    /// </summary>
     internal class TrapManager {
 
         private static readonly Random random = new Random();
@@ -31,13 +34,13 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 馬番をキーとするトラップ一覧
         /// </summary>
-        public Dictionary<int, List<TrapEntity>> HorseTraps { get; private set; }
+        public IReadOnlyDictionary<int, IReadOnlyList<TrapEntity>> HorseTraps { get; private set; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public TrapManager() {
-            this.HorseTraps = new Dictionary<int, List<TrapEntity>>();
+            this.HorseTraps = new Dictionary<int, IReadOnlyList<TrapEntity>>();
         }
 
         /// <summary>
@@ -46,11 +49,13 @@ namespace PocketDerby.Model {
         /// <param name="vRaceData">レースデータ</param>
         public void CreateTraps(RaceData vRaceData) {
 
-            this.HorseTraps.Clear();
+            var wHorseTraps = new Dictionary<int, IReadOnlyList<TrapEntity>>();
 
             foreach (var wHorse in vRaceData.Horses) {
-                this.HorseTraps[wHorse.Number] = CreateTrapsForHorse(wHorse);
+                wHorseTraps[wHorse.Number] = CreateTrapsForHorse(wHorse);
             }
+
+            this.HorseTraps = wHorseTraps;
 
         }
 

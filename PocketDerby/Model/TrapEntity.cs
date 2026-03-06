@@ -1,18 +1,21 @@
 ﻿namespace PocketDerby.Model {
+    /// <summary>
+    /// トラップの実体を作成するクラス
+    /// </summary>
     internal class TrapEntity {
 
         /// <summary>
         /// トラップのマスタデータ
         /// </summary>
-        public Trap TrapData { get; private set; }
+        public Trap TrapData { get; }
         /// <summary>
         /// トラップの位置
         /// </summary>
-        public double Position { get; private set; }
+        public double Position { get; }
         /// <summary>
         /// トラップが発生する馬の名前
         /// </summary>
-        public string HorseName { get; private set; }
+        public string HorseName { get; }
         /// <summary>
         /// トラップが発生したかどうか
         /// </summary>
@@ -22,14 +25,6 @@
         /// スピード補正値
         /// </summary>
         public double SpeedCorrection => this.TrapData.SpeedCorrection;
-        /// <summary>
-        /// トラップ発生時のメッセージ
-        /// </summary>
-        public string TriggerMessage => string.Format(this.TrapData.TriggerMessage, this.HorseName);
-        /// <summary>
-        /// トラップ回避時のメッセージ
-        /// </summary>
-        public string AvoidMessage => string.Format(this.TrapData.AvoidMessage, this.HorseName);
 
         /// <summary>
         /// コンストラクタ
