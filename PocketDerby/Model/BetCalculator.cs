@@ -22,18 +22,21 @@
         /// <returns>有効な場合はtrue、無効な場合はfalse</returns>
         public static bool ValidateBetAmount(int vBetAmount, int vPlayerMoney, out string vErrorMessage) {
 
-            if (vBetAmount < C_MinBetAmount) {
-                vErrorMessage = $"賭け金は{C_MinBetAmount}以上でなければなりません。";
-                return false;
-            }
-
+            // 掛け金が所持金を超えた場合
             if (vBetAmount > vPlayerMoney) {
-                vErrorMessage = "賭け金はプレイヤーの所持金を超えることはできません。";
+                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
                 return false;
             }
 
+            // 最小賭け金を下回った場合
+            if (vBetAmount < C_MinBetAmount) {
+                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
+                return false;
+            }
+
+            // 賭け金が100円単位でない場合
             if (vBetAmount % C_BetAmountUnit != 0) {
-                vErrorMessage = $"賭け金は{C_BetAmountUnit}単位でなければなりません。";
+                vErrorMessage = $"賭け金は{C_MinBetAmount}以上{vPlayerMoney}以下で、{C_BetAmountUnit}単位で入力してください。";
                 return false;
             }
 
