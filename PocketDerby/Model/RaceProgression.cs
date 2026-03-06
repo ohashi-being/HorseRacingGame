@@ -60,41 +60,37 @@ namespace PocketDerby.Model {
         }
 
         /// <summary>
-        /// レース状態を1ステップ進める
+        /// レースの1フレームの処理を実行する
         /// </summary>
-        public void AdvancedRace() {
+        public void UpdateRaceFrame() {
 
             if (!this.IsRaceRunning) return;
 
             foreach (var wHorse in this.FRaceData.Horses) {
                 if (this.FFinishOrder.ContainsKey(wHorse.Number)) continue;
-                UpdatePositions(wHorse);
+                MoveHorse(wHorse);
                 CheckGoals(wHorse);
             }
-
-            if (this.FFinishOrder.Count == this.FRaceData.Horses.Count) EndRace();
+            
+            CheckRaceEnd();
         }
 
         /// <summary>
-        /// 指定された馬の現在位置を更新する
+        /// 指定された馬の位置を更新する
         /// </summary>
         /// <param name="vHorse">対象の馬</param>
-        private void UpdatePositions(Horse vHorse) {
+        private void MoveHorse(Horse vHorse) {
 
             double wCurrentPosition = this.FRaceData.HorsePositions[vHorse.Number];
 
             // 現時点では、トラップでの補正はない
             double wNewPosition = wCurrentPosition + ( vHorse.Speed * C_PositionCoefficient );
 
-            if (wNewPosition > C_GoalPosition) {
-                wNewPosition = C_GoalPosition;
-            }
-
-            this.FRaceData.HorsePositions[vHorse.Number] = wNewPosition;
+            this.FRaceData.HorsePositions[vHorse.Number] = Math.Min(wNewPosition,C_GoalPosition);
         }
 
         /// <summary>
-        /// 指定された馬のゴール判定を行い、ゴールしている馬がいれば着順を記録する
+        /// 指定された馬がゴールしたか判定し、着順を記録する
         /// </summary>
         /// <param name="vHorse">対象の馬</param>
         private void CheckGoals(Horse vHorse) {
@@ -105,9 +101,12 @@ namespace PocketDerby.Model {
         }
 
         /// <summary>
-        /// レースを終了様態にし、レース結果をRaceDataに設定する
+        /// すべての馬がゴールしていればレースを終了する
         /// </summary>
-        private void EndRace() {
+        private void CheckRaceEnd() {
+            if (this.FFinishOrder.Count != this.FRaceData.Horses.Count) {
+                return;
+            }
             this.IsRaceRunning = false;
 
             var wRankedHorses = this.FRaceData.Horses
