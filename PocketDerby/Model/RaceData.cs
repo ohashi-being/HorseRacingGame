@@ -11,7 +11,7 @@ namespace PocketDerby.Model {
         /// <summary>
         /// スタート位置
         /// </summary>
-        private const double C_StartPosition = 86.0;
+        public const double C_StartPosition = 86.0;
 
         /// <summary>
         /// 出走馬一覧
