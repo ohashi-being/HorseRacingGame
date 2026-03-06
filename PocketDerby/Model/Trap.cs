@@ -45,13 +45,13 @@ namespace PocketDerby.Model {
         /// <returns>トラップ回避時のメッセージ</returns>
         public string GetAvoidMessage(string vHorseName) => string.Format(FAvoidMessage, vHorseName);
 
-        public static readonly Trap HeadWind =
+        public static readonly Trap C_HeadWind =
             new Trap(0.9, "おっと！{0}が逆風にあおられた！", "{0}は逆風をものともしない！");
-        public static readonly Trap BadTrack =
+        public static readonly Trap C_BadTrack =
             new Trap(0.8, "おっと！{0}の足元の馬場が悪い！", "{0}は悪い馬場を巧みにかわした！");
-        public static readonly Trap Temper =
+        public static readonly Trap C_Temper =
             new Trap(0.7, "おっと！{0}の気性が荒くなった！", "{0}は冷静さを保っている！");
 
-        public static readonly IReadOnlyList<Trap> AllTraps = new Trap[] { HeadWind, BadTrack, Temper };
+        public static readonly IReadOnlyList<Trap> C_AllTraps = new Trap[] { C_HeadWind, C_BadTrack, C_Temper };
     }
 }
