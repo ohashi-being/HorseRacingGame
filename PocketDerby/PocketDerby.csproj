@@ -70,6 +70,7 @@
     <Compile Include="Model\RaceData.cs" />
     <Compile Include="Model\TrapEntity.cs" />
     <Compile Include="Model\TrapManager.cs" />
+    <Compile Include="Model\Trap.cs" />
     <Compile Include="RaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
