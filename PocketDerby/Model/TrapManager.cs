@@ -11,68 +11,43 @@ namespace PocketDerby.Model {
         private static readonly Random random = new Random();
 
         /// <summary>
-        /// 1頭あたりのトラップの数
-        /// </summary>
-        public const int C_CountPerHorse = 3;
-        /// <summary>
-        /// トラップ間の最低距離
-        /// </summary>
-        public const double C_MinDistance = 100.0;
-        /// <summary>
-        /// トラップ発生位置の最大値
-        /// </summary>
-        private const double C_TrapPositionMax = 500.0;
-        /// <summary>
-        /// 回避率の基本確率
-        /// </summary>
-        private const double C_AvoidRateBase = 0.25;
-        /// <summary>
-        /// 運の良さによる回避率の変動係数
-        /// </summary>
-        private const double C_AvoidRateLuckFactor = 0.005;
-
-        /// <summary>
         /// 馬番をキーとするトラップ一覧
         /// </summary>
-        public IReadOnlyDictionary<int, IReadOnlyList<TrapEntity>> HorseTraps { get; private set; }
+        private readonly Dictionary<int, IReadOnlyList<TrapEntity>> FHorseToTraps = new Dictionary<int, IReadOnlyList<TrapEntity>>();
 
         /// <summary>
-        /// コンストラクタ
+        /// 馬番からトラップへのマップ
         /// </summary>
-        public TrapManager() {
-            this.HorseTraps = new Dictionary<int, IReadOnlyList<TrapEntity>>();
-        }
+        public IReadOnlyDictionary<int, IReadOnlyList<TrapEntity>> HorseToTraps => this.FHorseToTraps;
 
         /// <summary>
         /// 全馬のトラップを生成する
         /// </summary>
-        /// <param name="vRaceData">レースデータ</param>
-        public void CreateTraps(RaceData vRaceData) {
+        /// <param name="vHorses">馬のリスト</param>
+        public void CreateTraps(IReadOnlyCollection<Horse> vHorses) {
 
-            var wHorseTraps = new Dictionary<int, IReadOnlyList<TrapEntity>>();
+            this.FHorseToTraps.Clear();
 
-            foreach (var wHorse in vRaceData.Horses) {
-                wHorseTraps[wHorse.Number] = CreateTrapsForHorse(wHorse);
+            foreach (var wHorse in vHorses) {
+                FHorseToTraps[wHorse.Number] = CreateTrapsForHorse();
             }
-
-            this.HorseTraps = wHorseTraps;
-
         }
 
         /// <summary>
         /// 1頭分のトラップを生成する
         /// </summary>
-        /// <param name="vHorse">対象の馬</param>
         /// <returns>生成したトラップのリスト</returns>
-        private List<TrapEntity> CreateTrapsForHorse(Horse vHorse) {
+        private List<TrapEntity> CreateTrapsForHorse() {
 
             var wTraps = new List<TrapEntity>();
-            var wInterval = (C_TrapPositionMax - RaceData.C_StartPosition) / C_CountPerHorse;
+            var wTrapCount = Trap.C_AllTraps.Count;
+
+            var wInterval = (RaceRegulation.C_TrapPositionMax - RaceRegulation.C_StartPosition) / wTrapCount;
             var wShuffled = Trap.C_AllTraps.OrderBy(x => random.Next()).ToArray();
 
-            for (var i = 0 ; i < C_CountPerHorse ; i++) {
-                var wPosition = RaceData.C_StartPosition + wInterval * i + random.NextDouble() * (wInterval - C_MinDistance);
-                wTraps.Add(new TrapEntity(wShuffled[i], wPosition, vHorse.Name));
+            for (var i = 0 ; i < wTrapCount ; i++) {
+                var wPosition = RaceRegulation.C_StartPosition + wInterval * i + random.NextDouble() * (wInterval - RaceRegulation.C_MinDistance);
+                wTraps.Add(new TrapEntity(wShuffled[i], wPosition));
             }
 
             return wTraps;
@@ -81,38 +56,34 @@ namespace PocketDerby.Model {
         /// <summary>
         /// トラップの回避率を計算する
         /// </summary>
-        /// <param name="vHorse">馬</param>
+        /// <param name="vHorseLuck">運の良さ</param>
         /// <returns>トラップの回避率</returns>
-        private double CalculateAvoidRate(Horse vHorse) {
-            return C_AvoidRateBase + vHorse.Luck * C_AvoidRateLuckFactor;
+        private double CalculateAvoidRate(int vHorseLuck) {
+            return RaceRegulation.C_AvoidRateBase + vHorseLuck * RaceRegulation.C_AvoidRateLuckFactor;
         }
 
         /// <summary>
         /// トラップの回避判定を行う
         /// </summary>
-        /// <param name="vHorse">対象の馬</param>
+        /// <param name="vHorseLuck">対象の馬の運の良さ</param>
         /// <returns>回避成功したかどうか</returns>
-        public bool IsAvoided(Horse vHorse) {
-            return random.NextDouble() < CalculateAvoidRate(vHorse);
+        public bool IsAvoided(int vHorseLuck) {
+            return random.NextDouble() < CalculateAvoidRate(vHorseLuck);
         }
 
         /// <summary>
         /// 馬の現在位置に応じて、新しく踏んだトラップを取得する
         /// </summary>
-        /// <param name="vHorse">対象の馬</param>
+        /// <param name="vHorseNumber">対象の馬の馬番</param>
         /// <param name="vCurrentPosition">現在位置</param>
-        /// <returns>踏んだトラップ（該当なしの場合はnull）</returns>
-        public TrapEntity GetTrap(Horse vHorse, double vCurrentPosition) {
-            if (!this.HorseTraps.TryGetValue(vHorse.Number, out var wTraps)) {
-                return null;
+        /// <returns>現在位置にある未実行のトラップ（該当なしの場合はnull）</returns>
+        public TrapEntity GetTrap(int vHorseNumber, double vCurrentPosition) {
+            if (!this.HorseToTraps.TryGetValue(vHorseNumber, out var wTraps)) {
+                throw new ArgumentException($"指定された馬番({vHorseNumber})のトラップ情報が存在しません。", nameof(vHorseNumber));
             }
-            var wTrap = wTraps.FirstOrDefault(x => !x.IsTriggered && x.Position <= vCurrentPosition);
+            
+            return wTraps.FirstOrDefault(x => !x.IsTriggered && x.Position <= vCurrentPosition);
 
-            if (wTrap != null) {
-                wTrap.SetTriggered();
-            }
-
-            return wTrap;
         }
     }
 }

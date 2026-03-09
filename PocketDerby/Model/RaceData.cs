@@ -9,11 +9,6 @@ namespace PocketDerby.Model {
     internal class RaceData {
 
         /// <summary>
-        /// スタート位置
-        /// </summary>
-        public const double C_StartPosition = 86.0;
-
-        /// <summary>
         /// 出走馬一覧
         /// </summary>
         public IReadOnlyList<Horse> Horses { get; }
@@ -58,7 +53,7 @@ namespace PocketDerby.Model {
             this.Horses = new List<Horse>(vHorses).AsReadOnly();
             this.SelectedHorse = vSelectedHorse;
             this.BetAmount = vBetAmount;
-            this.HorsePositions = vHorses.ToDictionary(x => x.Number, horse => C_StartPosition);
+            this.HorsePositions = vHorses.ToDictionary(x => x.Number, horse => RaceRegulation.C_StartPosition);
         }
 
 
