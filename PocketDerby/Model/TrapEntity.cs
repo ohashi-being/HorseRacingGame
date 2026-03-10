@@ -30,7 +30,6 @@
         public TrapEntity(Trap vType, double vPosition) {
             this.Type = vType;
             this.Position = vPosition;
-            this.IsTriggered = false;
         }
 
         /// <summary>

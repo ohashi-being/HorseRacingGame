@@ -74,7 +74,7 @@
             // GoalPanel
             // 
             this.GoalPanel.BackColor = System.Drawing.Color.White;
-            this.GoalPanel.Location = new System.Drawing.Point(690, 0);
+            this.GoalPanel.Location = new System.Drawing.Point(700, 0);
             this.GoalPanel.Name = "GoalPanel";
             this.GoalPanel.Size = new System.Drawing.Size(2, 350);
             this.GoalPanel.TabIndex = 6;

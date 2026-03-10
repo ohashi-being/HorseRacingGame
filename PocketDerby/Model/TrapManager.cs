@@ -8,7 +8,7 @@ namespace PocketDerby.Model {
     /// </summary>
     internal class TrapManager {
 
-        private static readonly Random random = new Random();
+        private static readonly Random FRandom = new Random();
 
         /// <summary>
         /// 馬番をキーとするトラップ一覧
@@ -29,7 +29,7 @@ namespace PocketDerby.Model {
             this.FHorseToTraps.Clear();
 
             foreach (var wHorse in vHorses) {
-                FHorseToTraps[wHorse.Number] = CreateTrapsForHorse();
+                this.FHorseToTraps[wHorse.Number] = CreateTrapsForHorse();
             }
         }
 
@@ -42,24 +42,24 @@ namespace PocketDerby.Model {
             var wTraps = new List<TrapEntity>();
             var wTrapCount = Trap.C_AllTraps.Count;
 
-            var wInterval = (RaceRegulation.C_TrapPositionMax - RaceRegulation.C_StartPosition) / wTrapCount;
-            var wShuffled = Trap.C_AllTraps.OrderBy(x => random.Next()).ToArray();
+            var wAvailableDistance = RaceRegulation.C_TrapPositionMax - RaceRegulation.C_StartPosition;
+            if (wAvailableDistance <= 0) {
+                throw new InvalidOperationException("トラップを配置できる距離がありません。コース設定を見直してください。");
+            }
+
+            var wInterval = (wAvailableDistance) / wTrapCount;
+            if (wInterval < RaceRegulation.C_MinDistance) {
+                throw new InvalidOperationException($"トラップの配置間隔({wInterval})が最低距離({RaceRegulation.C_MinDistance})を下回っています。コース設定を見直してください。");
+            }
+
+            var wShuffled = Trap.C_AllTraps.OrderBy(x => FRandom.Next()).ToArray();
 
             for (var i = 0 ; i < wTrapCount ; i++) {
-                var wPosition = RaceRegulation.C_StartPosition + wInterval * i + random.NextDouble() * (wInterval - RaceRegulation.C_MinDistance);
+                var wPosition = RaceRegulation.C_StartPosition + wInterval * i + FRandom.NextDouble() * (wInterval - RaceRegulation.C_MinDistance);
                 wTraps.Add(new TrapEntity(wShuffled[i], wPosition));
             }
 
             return wTraps;
-        }
-
-        /// <summary>
-        /// トラップの回避率を計算する
-        /// </summary>
-        /// <param name="vHorseLuck">運の良さ</param>
-        /// <returns>トラップの回避率</returns>
-        private double CalculateAvoidRate(int vHorseLuck) {
-            return RaceRegulation.C_AvoidRateBase + vHorseLuck * RaceRegulation.C_AvoidRateLuckFactor;
         }
 
         /// <summary>
@@ -68,7 +68,8 @@ namespace PocketDerby.Model {
         /// <param name="vHorseLuck">対象の馬の運の良さ</param>
         /// <returns>回避成功したかどうか</returns>
         public bool IsAvoided(int vHorseLuck) {
-            return random.NextDouble() < CalculateAvoidRate(vHorseLuck);
+            var wAvoidRate = RaceRegulation.C_AvoidRateBase + vHorseLuck * RaceRegulation.C_AvoidRateLuckFactor;
+            return FRandom.NextDouble() < wAvoidRate;
         }
 
         /// <summary>
@@ -81,9 +82,8 @@ namespace PocketDerby.Model {
             if (!this.HorseToTraps.TryGetValue(vHorseNumber, out var wTraps)) {
                 throw new ArgumentException($"指定された馬番({vHorseNumber})のトラップ情報が存在しません。", nameof(vHorseNumber));
             }
-            
-            return wTraps.FirstOrDefault(x => !x.IsTriggered && x.Position <= vCurrentPosition);
 
+            return wTraps.FirstOrDefault(x => !x.IsTriggered && x.Position <= vCurrentPosition);
         }
     }
 }
