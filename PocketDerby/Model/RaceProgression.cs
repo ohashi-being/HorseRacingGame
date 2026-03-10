@@ -33,6 +33,10 @@ namespace PocketDerby.Model {
         /// レースが進行中かどうか
         /// </summary>
         public bool IsRaceRunning { get; private set; }
+        /// <summary>
+        /// レースが終了したかどうか
+        /// </summary>
+        private bool FIsRaceFinished;
 
         /// <summary>
         /// 指定されたレースデータを使用してRaceProgressionクラスの新しいインスタンスを初期化する
@@ -53,6 +57,9 @@ namespace PocketDerby.Model {
         /// レースを開始状態にする
         /// </summary>
         public void StartRace() {
+            if (this.FIsRaceFinished) {
+                throw new InvalidOperationException("レースは既に終了しています。新しいRaceProgressionを生成してください。");
+            }
             if (this.IsRaceRunning) {
                 throw new InvalidOperationException("レースは既に開始されています。");
             }
@@ -71,7 +78,6 @@ namespace PocketDerby.Model {
                 MoveHorse(wHorse);
                 CheckGoals(wHorse);
             }
-            
             CheckRaceEnd();
         }
 
@@ -83,10 +89,10 @@ namespace PocketDerby.Model {
 
             double wCurrentPosition = this.FRaceData.HorsePositions[vHorse.Number];
 
-            // 現時点では、トラップでの補正はない
-            double wNewPosition = wCurrentPosition + ( vHorse.Speed * C_PositionCoefficient );
+            // TODO: 現時点では、トラップでの補正はない
+            double wNewPosition = wCurrentPosition + (vHorse.Speed * C_PositionCoefficient);
 
-            this.FRaceData.HorsePositions[vHorse.Number] = Math.Min(wNewPosition,C_GoalPosition);
+            this.FRaceData.HorsePositions[vHorse.Number] = Math.Min(wNewPosition, C_GoalPosition);
         }
 
         /// <summary>
@@ -108,6 +114,7 @@ namespace PocketDerby.Model {
                 return;
             }
             this.IsRaceRunning = false;
+            this.FIsRaceFinished = true;
 
             var wRankedHorses = this.FRaceData.Horses
                 .OrderBy(x => this.FFinishOrder[x.Number])
