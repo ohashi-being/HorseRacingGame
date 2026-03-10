@@ -39,19 +39,20 @@ namespace PocketDerby.Model {
         /// <returns>生成したトラップのリスト</returns>
         private List<TrapEntity> CreateTrapsForHorse() {
 
-            var wTraps = new List<TrapEntity>();
-            var wTrapCount = Trap.C_AllTraps.Count;
-
             var wAvailableDistance = RaceRegulation.C_TrapPositionMax - RaceRegulation.C_StartPosition;
+
             if (wAvailableDistance <= 0) {
                 throw new InvalidOperationException("トラップを配置できる距離がありません。コース設定を見直してください。");
             }
 
-            var wInterval = (wAvailableDistance) / wTrapCount;
+            var wTrapCount = Trap.C_AllTraps.Count;
+            var wInterval = wAvailableDistance / wTrapCount;
+
             if (wInterval < RaceRegulation.C_MinDistance) {
                 throw new InvalidOperationException($"トラップの配置間隔({wInterval})が最低距離({RaceRegulation.C_MinDistance})を下回っています。コース設定を見直してください。");
             }
 
+            var wTraps = new List<TrapEntity>();
             var wShuffled = Trap.C_AllTraps.OrderBy(x => FRandom.Next()).ToArray();
 
             for (var i = 0 ; i < wTrapCount ; i++) {
