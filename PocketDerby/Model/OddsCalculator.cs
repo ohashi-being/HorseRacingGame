@@ -21,9 +21,9 @@ namespace PocketDerby.Model {
         private const double C_LuckCoefficient = 0.002;
 
         /// <summary>
-        /// 全馬のオッズを算出する
+        /// 全馬のオッズを算出し、設定する
         /// </summary>
-        public static void CalculateOdds(List<Horse> vHorses) {
+        public static void SetOdds(List<Horse> vHorses) {
             if (vHorses == null || vHorses.Count == 0) {
                 throw new ArgumentException("馬のリストが空です。", nameof(vHorses));
             }
@@ -32,17 +32,23 @@ namespace PocketDerby.Model {
             double[] wEffectiveSpeeds = new double[vHorses.Count];
 
             for (int i = 0 ; i < vHorses.Count ; i++) {
+                if (vHorses[i] == null) {
+                    throw new ArgumentException($"リストの{i}番目の馬がnullです。", nameof(vHorses));
+                }
+
                 wEffectiveSpeeds[i] = CalculateEffectiveSpeed(vHorses[i]);
+
+                if (wEffectiveSpeeds[i] <= 0) {
+                    throw new InvalidOperationException($"馬番{vHorses[i].Number}の実効スピードが0以下です。");
+                }
+
                 wTotalEffectiveSpeed += wEffectiveSpeeds[i];
             }
 
             double wEffectiveSpeedAverage = wTotalEffectiveSpeed / vHorses.Count;
 
             for (int i = 0 ; i < vHorses.Count ; i++) {
-                if (wEffectiveSpeeds[i] <= 0) {
-                    throw new InvalidOperationException($"馬番号{vHorses[i].Number}の実効スピードが0以下です。");
-                }
-                double wRawOdds = ( wEffectiveSpeedAverage / wEffectiveSpeeds[i] ) * C_OddsCoefficient;
+                double wRawOdds = (wEffectiveSpeedAverage / wEffectiveSpeeds[i]) * C_OddsCoefficient;
                 vHorses[i].Odds = Math.Max(Math.Round(wRawOdds, 2), C_MinimumOdds);
             }
         }
@@ -53,7 +59,7 @@ namespace PocketDerby.Model {
         /// <param name="vHorse">対象の馬</param>
         /// <returns>実効スピード</returns>
         private static double CalculateEffectiveSpeed(Horse vHorse) {
-            return vHorse.Speed * ( 1 + vHorse.Luck * C_LuckCoefficient );
+            return vHorse.Speed * (1 + vHorse.Luck * C_LuckCoefficient);
         }
     }
 }
