@@ -80,7 +80,7 @@ namespace PocketDerby.Model {
         /// <param name="vCurrentPosition">現在位置</param>
         /// <returns>現在位置にある未実行のトラップ（該当なしの場合はnull）</returns>
         public TrapEntity GetTrap(int vHorseNumber, double vCurrentPosition) {
-            if (!this.HorseToTraps.TryGetValue(vHorseNumber, out var wTraps)) {
+            if (!this.FHorseToTraps.TryGetValue(vHorseNumber, out var wTraps)) {
                 throw new ArgumentException($"指定された馬番({vHorseNumber})のトラップ情報が存在しません。", nameof(vHorseNumber));
             }
 

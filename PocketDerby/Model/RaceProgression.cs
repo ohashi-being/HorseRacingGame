@@ -9,10 +9,6 @@ namespace PocketDerby.Model {
     internal class RaceProgression {
 
         /// <summary>
-        /// ゴール位置
-        /// </summary>
-        private const double C_GoalPosition = 600.0;
-        /// <summary>
         /// 位置更新の係数
         /// </summary>
         private const double C_PositionCoefficient = 0.04;
@@ -89,10 +85,10 @@ namespace PocketDerby.Model {
 
             double wCurrentPosition = this.FRaceData.HorsePositions[vHorse.Number];
 
-            // TODO: 現時点では、トラップでの補正はない
-            double wNewPosition = wCurrentPosition + (vHorse.Speed * C_PositionCoefficient);
+            double wCurrentCorrection = this.FRaceData.HorseSpeedCorrection[vHorse.Number];
+            double wNewPosition = wCurrentPosition + (vHorse.Speed * C_PositionCoefficient * wCurrentCorrection);
 
-            this.FRaceData.HorsePositions[vHorse.Number] = Math.Min(wNewPosition, C_GoalPosition);
+            this.FRaceData.HorsePositions[vHorse.Number] = Math.Min(wNewPosition, RaceRegulation.C_GoalPosition);
         }
 
         /// <summary>
@@ -100,7 +96,7 @@ namespace PocketDerby.Model {
         /// </summary>
         /// <param name="vHorse">対象の馬</param>
         private void CheckGoals(Horse vHorse) {
-            if (this.FRaceData.HorsePositions[vHorse.Number] >= C_GoalPosition) {
+            if (this.FRaceData.HorsePositions[vHorse.Number] >= RaceRegulation.C_GoalPosition) {
                 this.FFinishOrder[vHorse.Number] = this.FCurrentRank;
                 this.FCurrentRank++;
             }

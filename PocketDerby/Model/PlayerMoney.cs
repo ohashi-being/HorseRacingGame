@@ -1,4 +1,6 @@
-﻿namespace PocketDerby.Model {
+﻿using System;
+
+namespace PocketDerby.Model {
     /// <summary>
     /// ユーザーの所持金クラス
     /// </summary>
@@ -20,5 +22,25 @@
         public PlayerMoney() {
             this.Money = C_InitialMoney;
         }
+
+        /// <summary>
+        /// 所持金を増やす
+        /// </summary>
+        /// <param name="vAmount"></param>
+        public void AddMoney(int vAmount) {
+            this.Money += vAmount;
+        }
+
+        /// <summary>
+        /// 所持金を減らす
+        /// </summary>
+        /// <param name="vAmount"></param>
+        public void SubtractMoney(int vAmount) {
+            if (vAmount > this.Money) {
+                throw new InvalidOperationException("所持金が不足しています。");
+            }
+            this.Money -= vAmount;
+        }
+
     }
 }
