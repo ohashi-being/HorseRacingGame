@@ -109,6 +109,7 @@
             this.ConfirmButton.TabIndex = 3;
             this.ConfirmButton.Text = "決定";
             this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // HorseSelectForm
             // 
