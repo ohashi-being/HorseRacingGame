@@ -26,21 +26,23 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 所持金を増やす
         /// </summary>
-        /// <param name="vAmount"></param>
+        /// <param name="vAmount">増やす金額</param>
         public void AddMoney(int vAmount) {
+            if (vAmount < 0) {
+                throw new ArgumentException("増やす金額は0以上でなければなりません。");
+            }
             this.Money += vAmount;
         }
 
         /// <summary>
         /// 所持金を減らす
         /// </summary>
-        /// <param name="vAmount"></param>
+        /// <param name="vAmount">減らす金額</param>
         public void SubtractMoney(int vAmount) {
             if (vAmount > this.Money) {
                 throw new InvalidOperationException("所持金が不足しています。");
             }
             this.Money -= vAmount;
         }
-
     }
 }

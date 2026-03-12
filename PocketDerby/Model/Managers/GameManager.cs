@@ -31,7 +31,7 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 現在のトラップ管理
         /// </summary>
-        private TrapManager TrapManager { get; set; }
+        private TrapManager TrapManager { get; } = new TrapManager();
 
 
         // ① レース準備フェーズ
@@ -45,7 +45,6 @@ namespace PocketDerby.Model {
 
             OddsCalculator.SetOdds(wHorses);
 
-            this.TrapManager = new TrapManager();
             this.TrapManager.CreateTraps(wHorses);
 
             this.CurrentHorses = wHorses.AsReadOnly();
@@ -62,7 +61,7 @@ namespace PocketDerby.Model {
         /// <param name="vBetAmount">賭け金</param>
         /// <param name="vErrorMessage">エラー時のメッセージ</param>
         /// <returns>購入成功ならtrue</returns>
-        public bool BuyTicket(Horse vHorse, int vBetAmount, out string vErrorMessage) {
+        public bool TryBuyTicket(Horse vHorse, int vBetAmount, out string vErrorMessage) {
 
             if (this.CurrentHorses == null || this.CurrentHorses.Count == 0) {
                 vErrorMessage = "レースの準備が完了していません。";
@@ -124,11 +123,11 @@ namespace PocketDerby.Model {
 
             foreach (var wHorse in this.CurrentHorses) {
 
-                if (this.CurrentRaceData.HorsePositions[wHorse.Number] >= RaceRegulation.C_GoalPosition) {
+                double wCurrentPos = this.CurrentRaceData.HorsePositions[wHorse.Number];
+
+                if (wCurrentPos >= RaceRegulation.C_GoalPosition) {
                     continue;
                 }
-
-                double wCurrentPos = this.CurrentRaceData.HorsePositions[wHorse.Number];
 
                 TrapEntity wTrap = this.TrapManager.GetTrap(wHorse.Number, wCurrentPos);
 

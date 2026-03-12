@@ -27,7 +27,7 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 馬のスピード補正値（キー: 馬番,値: 補正値）
         /// </summary>
-        public Dictionary<int, double> HorseSpeedCorrection { get;}
+        public Dictionary<int, double> HorseSpeedCorrection { get; }
         /// <summary>
         /// レース結果（着順）
         /// </summary>
@@ -57,8 +57,8 @@ namespace PocketDerby.Model {
             this.Horses = new List<Horse>(vHorses).AsReadOnly();
             this.SelectedHorse = vSelectedHorse;
             this.BetAmount = vBetAmount;
-            this.HorsePositions = vHorses.ToDictionary(x => x.Number, horse => RaceRegulation.C_StartPosition);
-            this.HorseSpeedCorrection = vHorses.ToDictionary(x => x.Number, horse => RaceRegulation.C_HorseSpeedCorrectionBase);
+            this.HorsePositions = vHorses.ToDictionary(x => x.Number, _ => RaceRegulation.C_StartPosition);
+            this.HorseSpeedCorrection = vHorses.ToDictionary(x => x.Number, _ => RaceRegulation.C_HorseSpeedCorrectionBase);
         }
 
 
