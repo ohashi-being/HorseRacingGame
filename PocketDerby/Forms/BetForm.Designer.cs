@@ -29,18 +29,18 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
             this.TableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.OddsValueLabel = new System.Windows.Forms.Label();
-            this.LuckValueLabel = new System.Windows.Forms.Label();
-            this.SpeedValueLabel = new System.Windows.Forms.Label();
-            this.SpeedLabel = new System.Windows.Forms.Label();
-            this.LuckLabel = new System.Windows.Forms.Label();
-            this.OddsLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.HorsePictureBox = new System.Windows.Forms.PictureBox();
             this.BetNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.HorseNameLabel = new System.Windows.Forms.Label();
             this.PayoutLabel = new System.Windows.Forms.Label();
             this.PayoutValueLabel = new System.Windows.Forms.Label();
+            this.SpeedLabel = new System.Windows.Forms.Label();
+            this.LuckLabel = new System.Windows.Forms.Label();
+            this.OddsLabel = new System.Windows.Forms.Label();
+            this.SpeedValueLabel = new System.Windows.Forms.Label();
+            this.LuckValueLabel = new System.Windows.Forms.Label();
+            this.OddsValueLabel = new System.Windows.Forms.Label();
             this.TableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetNumericUpDown)).BeginInit();
@@ -75,7 +75,6 @@
             this.ConfirmButton.TabIndex = 7;
             this.ConfirmButton.Text = "確定";
             this.ConfirmButton.UseVisualStyleBackColor = true;
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // BackButton
             // 
@@ -86,7 +85,6 @@
             this.BackButton.TabIndex = 8;
             this.BackButton.Text = "戻る";
             this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // HorseNumberLabel
             // 
@@ -117,73 +115,6 @@
             this.TableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TableLayoutPanel.Size = new System.Drawing.Size(236, 111);
             this.TableLayoutPanel.TabIndex = 10;
-            // 
-            // OddsValueLabel
-            // 
-            this.OddsValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OddsValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OddsValueLabel.Location = new System.Drawing.Point(133, 72);
-            this.OddsValueLabel.Name = "OddsValueLabel";
-            this.OddsValueLabel.Size = new System.Drawing.Size(100, 39);
-            this.OddsValueLabel.TabIndex = 5;
-            this.OddsValueLabel.Text = "5.2";
-            this.OddsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // LuckValueLabel
-            // 
-            this.LuckValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LuckValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.LuckValueLabel.Location = new System.Drawing.Point(133, 36);
-            this.LuckValueLabel.Name = "LuckValueLabel";
-            this.LuckValueLabel.Size = new System.Drawing.Size(100, 36);
-            this.LuckValueLabel.TabIndex = 4;
-            this.LuckValueLabel.Text = "90";
-            this.LuckValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SpeedValueLabel
-            // 
-            this.SpeedValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpeedValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.SpeedValueLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.SpeedValueLabel.Location = new System.Drawing.Point(133, 0);
-            this.SpeedValueLabel.Name = "SpeedValueLabel";
-            this.SpeedValueLabel.Size = new System.Drawing.Size(100, 36);
-            this.SpeedValueLabel.TabIndex = 3;
-            this.SpeedValueLabel.Text = "65";
-            this.SpeedValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SpeedLabel
-            // 
-            this.SpeedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SpeedLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.SpeedLabel.Location = new System.Drawing.Point(3, 0);
-            this.SpeedLabel.Name = "SpeedLabel";
-            this.SpeedLabel.Size = new System.Drawing.Size(124, 36);
-            this.SpeedLabel.TabIndex = 0;
-            this.SpeedLabel.Text = "スピード";
-            this.SpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // LuckLabel
-            // 
-            this.LuckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LuckLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.LuckLabel.Location = new System.Drawing.Point(3, 36);
-            this.LuckLabel.Name = "LuckLabel";
-            this.LuckLabel.Size = new System.Drawing.Size(124, 36);
-            this.LuckLabel.TabIndex = 1;
-            this.LuckLabel.Text = "運の良さ";
-            this.LuckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // OddsLabel
-            // 
-            this.OddsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OddsLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OddsLabel.Location = new System.Drawing.Point(3, 72);
-            this.OddsLabel.Name = "OddsLabel";
-            this.OddsLabel.Size = new System.Drawing.Size(124, 39);
-            this.OddsLabel.TabIndex = 2;
-            this.OddsLabel.Text = "オッズ";
-            this.OddsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TitleLabel
             // 
@@ -249,6 +180,73 @@
             this.PayoutValueLabel.Size = new System.Drawing.Size(156, 37);
             this.PayoutValueLabel.TabIndex = 15;
             this.PayoutValueLabel.Text = "10000円";
+            // 
+            // SpeedLabel
+            // 
+            this.SpeedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpeedLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SpeedLabel.Location = new System.Drawing.Point(3, 0);
+            this.SpeedLabel.Name = "SpeedLabel";
+            this.SpeedLabel.Size = new System.Drawing.Size(124, 36);
+            this.SpeedLabel.TabIndex = 0;
+            this.SpeedLabel.Text = "スピード";
+            this.SpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LuckLabel
+            // 
+            this.LuckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LuckLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LuckLabel.Location = new System.Drawing.Point(3, 36);
+            this.LuckLabel.Name = "LuckLabel";
+            this.LuckLabel.Size = new System.Drawing.Size(124, 36);
+            this.LuckLabel.TabIndex = 1;
+            this.LuckLabel.Text = "運の良さ";
+            this.LuckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // OddsLabel
+            // 
+            this.OddsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OddsLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.OddsLabel.Location = new System.Drawing.Point(3, 72);
+            this.OddsLabel.Name = "OddsLabel";
+            this.OddsLabel.Size = new System.Drawing.Size(124, 39);
+            this.OddsLabel.TabIndex = 2;
+            this.OddsLabel.Text = "オッズ";
+            this.OddsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SpeedValueLabel
+            // 
+            this.SpeedValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SpeedValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.SpeedValueLabel.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.SpeedValueLabel.Location = new System.Drawing.Point(133, 0);
+            this.SpeedValueLabel.Name = "SpeedValueLabel";
+            this.SpeedValueLabel.Size = new System.Drawing.Size(100, 36);
+            this.SpeedValueLabel.TabIndex = 3;
+            this.SpeedValueLabel.Text = "65";
+            this.SpeedValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // LuckValueLabel
+            // 
+            this.LuckValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LuckValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.LuckValueLabel.Location = new System.Drawing.Point(133, 36);
+            this.LuckValueLabel.Name = "LuckValueLabel";
+            this.LuckValueLabel.Size = new System.Drawing.Size(100, 36);
+            this.LuckValueLabel.TabIndex = 4;
+            this.LuckValueLabel.Text = "90";
+            this.LuckValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // OddsValueLabel
+            // 
+            this.OddsValueLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OddsValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.OddsValueLabel.Location = new System.Drawing.Point(133, 72);
+            this.OddsValueLabel.Name = "OddsValueLabel";
+            this.OddsValueLabel.Size = new System.Drawing.Size(100, 39);
+            this.OddsValueLabel.TabIndex = 5;
+            this.OddsValueLabel.Text = "5.2";
+            this.OddsValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BetForm
             // 
