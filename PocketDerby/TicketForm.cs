@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PocketDerby {
     public partial class TicketForm : Form {
         public TicketForm() {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// 購入馬券表示画面からレース画面へ遷移する
+        /// </summary>
+        private void GoRaceButton_Click(object sender, EventArgs e) {
+            var wNextForm = new RaceForm();
+            this.Hide();
+            wNextForm.ShowDialog();
+            this.Close();
         }
     }
 }

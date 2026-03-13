@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace PocketDerby {
     public partial class RaceForm : Form {
         public RaceForm() {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// レース終了後、結果画面へ遷移する
+        /// </summary>
+        private void GoToResultForm() {
+            var wNextForm = new ResultForm();
+            this.Hide();
+            wNextForm.ShowDialog();
+            this.Close();
         }
     }
 }
