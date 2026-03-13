@@ -62,23 +62,15 @@ namespace PocketDerby.Model {
         /// <param name="vErrorMessage">エラー時のメッセージ</param>
         /// <returns>購入成功ならtrue</returns>
         public bool TryBuyTicket(Horse vHorse, int vBetAmount, out string vErrorMessage) {
+            if (this.CurrentHorses == null || this.CurrentHorses.Count == 0) throw new InvalidOperationException("出走馬が存在しません。レースを準備してください。");
+            if (this.RaceProgression != null) throw new InvalidOperationException("レースは既に開始されています。");
 
-            if (this.CurrentHorses == null || this.CurrentHorses.Count == 0) {
-                vErrorMessage = "レースの準備が完了していません。";
+            vErrorMessage = string.Empty;
+            if (!BetCalculator.IsValidBetAmount(vBetAmount, this.PlayerMoney.Money)) {
+                vErrorMessage = BetCalculator.GetBetAmountErrorMessage(this.PlayerMoney.Money);
                 return false;
             }
-
-            if (this.RaceProgression != null) {
-                vErrorMessage = "レースが既に開始されています。";
-                return false;
-            }
-
-            if (!BetCalculator.ValidateBetAmount(vBetAmount, this.PlayerMoney.Money, out vErrorMessage)) {
-                return false;
-            }
-
             this.PlayerMoney.SubtractMoney(vBetAmount);
-
             this.CurrentRaceData = new RaceData(this.CurrentHorses.ToList(), vHorse, vBetAmount);
 
             return true;
@@ -89,13 +81,9 @@ namespace PocketDerby.Model {
         /// </summary>
         public void StartRace() {
 
-            if (this.CurrentRaceData == null) {
-                throw new InvalidOperationException("レースデータが存在しません。馬券を購入してください。");
-            }
+            if (this.CurrentRaceData == null) throw new InvalidOperationException("レースデータが存在しません。馬券を購入してください。");
 
-            if (this.RaceProgression != null) {
-                throw new InvalidOperationException("レースは既に開始されています。");
-            }
+            if (this.RaceProgression != null) throw new InvalidOperationException("レースは既に開始されています。");
 
             this.RaceProgression = new RaceProgression(this.CurrentRaceData);
             this.RaceProgression.StartRace();
@@ -107,43 +95,40 @@ namespace PocketDerby.Model {
         /// </summary>
         /// <param name="vMessages">このフレームで発生したトラップのメッセージ一覧</param>
         /// <returns>1フレーム進めた結果、レースが「終了」した場合はtrue</returns>
-        public bool UpdateRace(out List<string> vMessages) {
-
-            vMessages = new List<string>();
-
-            if (this.RaceProgression == null) {
-                throw new InvalidOperationException("レース進行管理が初期化されていません。レースを開始してください。");
-            }
-
-            if (!this.RaceProgression.IsRaceRunning) {
-                throw new InvalidOperationException("レースは既に終了しています。ProcessRaceEnd を呼び出してください。");
-            }
+        public bool UpdateRace() {
+            if (this.RaceProgression == null) throw new InvalidOperationException("レース進行管理が初期化されていません。レースを開始してください。");
 
             this.RaceProgression.UpdateRaceFrame();
 
+            return !this.RaceProgression.IsRaceRunning;
+        }
+
+        /// <summary>
+        /// 全馬のトラップ判定を行い、メッセージを収集する
+        /// </summary>
+        /// <returns>このフレームで発生したトラップのメッセージ一覧</returns>
+        public List<string> TriggerTraps() {
+            if (this.CurrentRaceData == null) throw new InvalidOperationException("レースデータが存在しません。馬券を購入してください。");
+
+            var wMessages = new List<string>();
+
             foreach (var wHorse in this.CurrentHorses) {
-
                 double wCurrentPos = this.CurrentRaceData.HorsePositions[wHorse.Number];
-
-                if (wCurrentPos >= RaceRegulation.C_GoalPosition) {
-                    continue;
-                }
+                if (wCurrentPos >= RaceRegulation.C_GoalPosition) continue;
 
                 TrapEntity wTrap = this.TrapManager.GetTrap(wHorse.Number, wCurrentPos);
-
                 if (wTrap == null) continue;
 
                 wTrap.SetTriggered();
 
                 if (this.TrapManager.IsAvoided(wHorse.Luck)) {
-                    vMessages.Add(wTrap.Type.GetAvoidMessage(wHorse.Name));
+                    wMessages.Add(wTrap.Type.GetAvoidMessage(wHorse.Name));
                 } else {
-                    vMessages.Add(wTrap.Type.GetTriggerMessage(wHorse.Name));
+                    wMessages.Add(wTrap.Type.GetTriggerMessage(wHorse.Name));
                     this.CurrentRaceData.HorseSpeedCorrection[wHorse.Number] *= wTrap.SpeedCorrection;
                 }
             }
-
-            return !this.RaceProgression.IsRaceRunning;
+            return wMessages;
         }
 
         // ④ レース精算フェーズ
@@ -153,13 +138,9 @@ namespace PocketDerby.Model {
         /// <returns>今回の払戻金</returns>
         public int ProcessRaceEnd() {
 
-            if (this.RaceProgression == null) {
-                throw new InvalidOperationException("レースが開始されていません。");
-            }
+            if (this.RaceProgression == null) throw new InvalidOperationException("レースが開始されていません。");
 
-            if (this.RaceProgression.IsRaceRunning) {
-                throw new InvalidOperationException("レースがまだ進行中です。UpdateRace でレースを完了させてください。");
-            }
+            if (this.RaceProgression.IsRaceRunning) throw new InvalidOperationException("レースがまだ進行中です。UpdateRace でレースを完了させてください。");
 
             if (this.CurrentRaceData?.RaceResults == null || this.CurrentRaceData.RaceResults.Count == 0) return 0;
 
