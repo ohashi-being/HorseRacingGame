@@ -46,81 +46,82 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BetForm.cs">
+    <Compile Include="Forms\BetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BetForm.Designer.cs">
+    <Compile Include="Forms\BetForm.Designer.cs">
       <DependentUpon>BetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClearForm.cs">
+    <Compile Include="Forms\ClearForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClearForm.Designer.cs">
+    <Compile Include="Forms\ClearForm.Designer.cs">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HorseSelectForm.cs">
+    <Compile Include="Forms\HorseSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HorseSelectForm.Designer.cs">
+    <Compile Include="Forms\HorseSelectForm.Designer.cs">
       <DependentUpon>HorseSelectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\HorseGenerator.cs" />
-    <Compile Include="Model\RaceProgression.cs" />
-    <Compile Include="Model\BetCalculator.cs" />
-    <Compile Include="Model\HorseNameMaster.cs" />
-    <Compile Include="Model\Horse.cs" />
-    <Compile Include="Model\OddsCalculator.cs" />
-    <Compile Include="Model\PlayerMoney.cs" />
-    <Compile Include="Model\RaceData.cs" />
-    <Compile Include="Model\RaceRegulation.cs" />
-    <Compile Include="Model\TrapEntity.cs" />
-    <Compile Include="Model\TrapManager.cs" />
-    <Compile Include="Model\Trap.cs" />
-    <Compile Include="RaceForm.cs">
+    <Compile Include="Model\Managers\GameManager.cs" />
+    <Compile Include="Model\Calculators\HorseGenerator.cs" />
+    <Compile Include="Model\Managers\RaceProgression.cs" />
+    <Compile Include="Model\Calculators\BetCalculator.cs" />
+    <Compile Include="Model\Masters\HorseNameMaster.cs" />
+    <Compile Include="Model\Entities\Horse.cs" />
+    <Compile Include="Model\Calculators\OddsCalculator.cs" />
+    <Compile Include="Model\Entities\PlayerMoney.cs" />
+    <Compile Include="Model\Entities\RaceData.cs" />
+    <Compile Include="Model\Masters\RaceRegulation.cs" />
+    <Compile Include="Model\Entities\TrapEntity.cs" />
+    <Compile Include="Model\Managers\TrapManager.cs" />
+    <Compile Include="Model\Entities\Trap.cs" />
+    <Compile Include="Forms\RaceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RaceForm.Designer.cs">
+    <Compile Include="Forms\RaceForm.Designer.cs">
       <DependentUpon>RaceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ResultForm.cs">
+    <Compile Include="Forms\ResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResultForm.Designer.cs">
+    <Compile Include="Forms\ResultForm.Designer.cs">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TicketForm.cs">
+    <Compile Include="Forms\TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TicketForm.Designer.cs">
+    <Compile Include="Forms\TicketForm.Designer.cs">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TitleForm.cs">
+    <Compile Include="Forms\TitleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TitleForm.Designer.cs">
+    <Compile Include="Forms\TitleForm.Designer.cs">
       <DependentUpon>TitleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BetForm.resx">
+    <EmbeddedResource Include="Forms\BetForm.resx">
       <DependentUpon>BetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClearForm.resx">
+    <EmbeddedResource Include="Forms\ClearForm.resx">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HorseSelectForm.resx">
+    <EmbeddedResource Include="Forms\HorseSelectForm.resx">
       <DependentUpon>HorseSelectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RaceForm.resx">
+    <EmbeddedResource Include="Forms\RaceForm.resx">
       <DependentUpon>RaceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ResultForm.resx">
+    <EmbeddedResource Include="Forms\ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TicketForm.resx">
+    <EmbeddedResource Include="Forms\TicketForm.resx">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TitleForm.resx">
+    <EmbeddedResource Include="Forms\TitleForm.resx">
       <DependentUpon>TitleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
