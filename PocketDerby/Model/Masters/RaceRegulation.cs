@@ -14,7 +14,6 @@
         /// </summary>
         public const double C_StartPosition = 86.0;
 
-        // TODO: #602513: レース進行クラスの実装がマージされ次第反映
         /// <summary>
         /// ゴール位置
         /// </summary>
@@ -36,5 +35,10 @@
         /// 運の良さによる回避率の変動係数
         /// </summary>
         public const double C_AvoidRateLuckFactor = 0.005;
+
+        /// <summary>
+        /// 馬のスピード補正値の基準値
+        /// </summary>
+        public const double C_HorseSpeedCorrectionBase = 1.0;
     }
 }
