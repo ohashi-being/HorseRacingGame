@@ -11,10 +11,7 @@ namespace PocketDerby {
         /// 購入馬券表示画面からレース画面へ遷移する
         /// </summary>
         private void GoRaceButton_Click(object sender, EventArgs e) {
-            var wNextForm = new RaceForm();
-            this.Hide();
-            wNextForm.ShowDialog();
-            this.Close();
+            this.GoNextForm(new RaceForm());
         }
     }
 }

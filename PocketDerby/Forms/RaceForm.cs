@@ -10,10 +10,7 @@ namespace PocketDerby {
         /// レース終了後、結果画面へ遷移する
         /// </summary>
         private void GoToResultForm() {
-            var wNextForm = new ResultForm();
-            this.Hide();
-            wNextForm.ShowDialog();
-            this.Close();
+            this.GoNextForm(new ResultForm());
         }
     }
 }

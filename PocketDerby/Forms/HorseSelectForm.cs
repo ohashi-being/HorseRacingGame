@@ -11,10 +11,7 @@ namespace PocketDerby {
         /// 馬選択画面から掛け金入力画面へ遷移する
         /// </summary>
         private void ConfirmButton_Click(object sender, EventArgs e) {
-            var wNextForm = new BetForm();
-            this.Hide();
-            wNextForm.ShowDialog();
-            this.Close();
+            this.GoNextForm(new BetForm());
         }
     }
 }
