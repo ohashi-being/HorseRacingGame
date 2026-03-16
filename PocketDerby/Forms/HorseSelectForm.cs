@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PocketDerby {
     public partial class HorseSelectForm : Form {
         public HorseSelectForm() {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// 馬選択画面から掛け金入力画面へ遷移する
+        /// </summary>
+        private void ConfirmButton_Click(object sender, EventArgs e) {
+            this.GoNextForm(new BetForm());
         }
     }
 }
