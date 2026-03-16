@@ -48,6 +48,7 @@
             resources.ApplyResources(this.StartButton, "StartButton");
             this.StartButton.Name = "StartButton";
             this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // TitleForm
             // 

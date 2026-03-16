@@ -13,7 +13,7 @@ namespace PocketDerby {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BetForm());
+            Application.Run(new TitleForm());
         }
     }
 }

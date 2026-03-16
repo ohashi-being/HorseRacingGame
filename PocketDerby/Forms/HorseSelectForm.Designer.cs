@@ -47,10 +47,10 @@
             this.OddsColumn});
             this.ListView.FullRowSelect = true;
             this.ListView.HideSelection = false;
-            this.ListView.Location = new System.Drawing.Point(151, 86);
+            this.ListView.Location = new System.Drawing.Point(50, 86);
             this.ListView.MultiSelect = false;
             this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(505, 307);
+            this.ListView.Size = new System.Drawing.Size(690, 350);
             this.ListView.TabIndex = 0;
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
@@ -109,6 +109,7 @@
             this.ConfirmButton.TabIndex = 3;
             this.ConfirmButton.Text = "決定";
             this.ConfirmButton.UseVisualStyleBackColor = true;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // HorseSelectForm
             // 
@@ -122,6 +123,7 @@
             this.Controls.Add(this.ListView);
             this.Name = "HorseSelectForm";
             this.Text = "HorseSelectForm";
+            this.Load += new System.EventHandler(this.HorseSelectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
