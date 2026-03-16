@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using PocketDerby.Model;
 
 namespace PocketDerby {
-    public partial class TicketForm : Form {
-        public TicketForm() {
+    internal partial class TicketForm : Form {
+
+        /// <summary>
+        /// ゲーム全体を管理するGameManagerインスタンス
+        /// </summary>
+        private GameManager FGameManager;
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="vGameManeger">ゲーム全体を管理するGameManagerインスタンス</param>
+        public TicketForm(GameManager vGameManeger) {
             InitializeComponent();
+
+            this.FGameManager = vGameManeger;
         }
     }
 }

@@ -128,7 +128,7 @@ namespace PocketDerby {
         /// </summary>
         /// <param name="vNumber">馬番</param>
         /// <returns>丸数字の文字列</returns>
-        private static string GetCircleNumber(int vNumber) {
+        public static string GetCircleNumber(int vNumber) {
             string[] wCircleNumber = { "①", "②", "③", "④", "⑤" };
             if (vNumber >= 1 && vNumber <= wCircleNumber.Length) {
                 return wCircleNumber[vNumber - 1];
