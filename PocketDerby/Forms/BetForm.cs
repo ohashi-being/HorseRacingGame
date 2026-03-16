@@ -8,12 +8,12 @@ namespace PocketDerby {
         /// <summary>
         /// ゲーム全体を管理するGameManagerインスタンス
         /// </summary>
-        private GameManager FGameManager;
+        private readonly GameManager FGameManager;
 
         /// <summary>
         /// 選択された馬
         /// </summary>
-        private Horse FSelectedHorse;
+        private readonly Horse FSelectedHorse;
 
         /// <summary>
         /// コンストラクタ
