@@ -12,12 +12,12 @@ namespace PocketDerby {
         /// <summary>
         /// ゲーム全体を管理するGameManagerインスタンス
         /// </summary>
-        private GameManager FGameManager;
+        private readonly GameManager FGameManager;
 
         /// <summary>
         /// 選択された馬
         /// </summary>
-        private Horse FSelectedHorse;
+        private readonly Horse FSelectedHorse;
 
         /// <summary>
         /// コンストラクタ
@@ -30,7 +30,6 @@ namespace PocketDerby {
             this.FSelectedHorse = vSelectedHorse;
 
             this.BetNumericUpDown.Minimum = BetCalculator.C_MinBetAmount;
-            this.BetNumericUpDown.Increment = BetCalculator.C_BetAmountUnit;
         }
 
         /// <summary>
@@ -55,7 +54,6 @@ namespace PocketDerby {
 
             if (Properties.Resources.ResourceManager.GetObject($"Horse{this.FSelectedHorse.Number}") is Image wImage) {
                 this.HorsePictureBox.Image = wImage;
-                this.HorsePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
