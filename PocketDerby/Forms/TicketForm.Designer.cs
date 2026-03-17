@@ -54,6 +54,7 @@
             this.GoRaceButton.TabIndex = 13;
             this.GoRaceButton.Text = "いざレースへ！";
             this.GoRaceButton.UseVisualStyleBackColor = true;
+            this.GoRaceButton.Click += new System.EventHandler(this.GoRaceButton_Click);
             // 
             // TicketPanel
             // 

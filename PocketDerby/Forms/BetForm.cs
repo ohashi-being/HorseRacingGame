@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using PocketDerby.Forms;
 using PocketDerby.Model;
 
 namespace PocketDerby {
@@ -47,7 +48,7 @@ namespace PocketDerby {
         /// </summary>
         private void SetupHorseInfo() {
             this.HorseNameLabel.Text = this.FSelectedHorse.Name;
-            this.HorseNumberLabel.Text = HorseSelectForm.GetCircleNumber(this.FSelectedHorse.Number);
+            this.HorseNumberLabel.Text = DisplayHelper.GetCircleNumber(this.FSelectedHorse.Number);
             this.SpeedValueLabel.Text = this.FSelectedHorse.Speed.ToString();
             this.LuckValueLabel.Text = this.FSelectedHorse.Luck.ToString();
             this.OddsValueLabel.Text = this.FSelectedHorse.Odds.ToString("0.0");
@@ -99,10 +100,7 @@ namespace PocketDerby {
                 return;
             }
 
-            var wNextForm = new TicketForm(this.FGameManager);
-            this.Hide();
-            wNextForm.ShowDialog();
-            this.Close();
+            this.GoNextForm(new TicketForm(this.FGameManager));
         }
 
         /// <summary>
@@ -111,5 +109,6 @@ namespace PocketDerby {
         private void BackButton_Click(object sender, EventArgs e) {
             this.Close();
         }
+
     }
 }

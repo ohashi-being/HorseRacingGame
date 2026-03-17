@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.ListView = new System.Windows.Forms.ListView();
             this.HorseImageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HorseNumberColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -30,6 +31,7 @@
             this.SpeedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LuckColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OddsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FHorseImageList = new System.Windows.Forms.ImageList(this.components);
             this.TitleLabel = new System.Windows.Forms.Label();
             this.CurrentMoneyLabel = new System.Windows.Forms.Label();
             this.ConfirmButton = new System.Windows.Forms.Button();
@@ -45,12 +47,14 @@
             this.SpeedColumn,
             this.LuckColumn,
             this.OddsColumn});
+            this.ListView.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ListView.FullRowSelect = true;
             this.ListView.HideSelection = false;
             this.ListView.Location = new System.Drawing.Point(50, 86);
             this.ListView.MultiSelect = false;
             this.ListView.Name = "ListView";
             this.ListView.Size = new System.Drawing.Size(690, 350);
+            this.ListView.SmallImageList = this.FHorseImageList;
             this.ListView.TabIndex = 0;
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
@@ -58,26 +62,38 @@
             // HorseImageColumn
             // 
             this.HorseImageColumn.Text = "馬体写真";
+            this.HorseImageColumn.Width = 120;
             // 
             // HorseNumberColumn
             // 
             this.HorseNumberColumn.Text = "馬番";
+            this.HorseNumberColumn.Width = 70;
             // 
             // HorseNameColumn
             // 
             this.HorseNameColumn.Text = "馬名";
+            this.HorseNameColumn.Width = 195;
             // 
             // SpeedColumn
             // 
             this.SpeedColumn.Text = "スピード";
+            this.SpeedColumn.Width = 100;
             // 
             // LuckColumn
             // 
             this.LuckColumn.Text = "運の良さ";
+            this.LuckColumn.Width = 110;
             // 
             // OddsColumn
             // 
             this.OddsColumn.Text = "オッズ";
+            this.OddsColumn.Width = 90;
+            // 
+            // FHorseImageList
+            // 
+            this.FHorseImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.FHorseImageList.ImageSize = new System.Drawing.Size(80, 58);
+            this.FHorseImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // TitleLabel
             // 
@@ -141,5 +157,6 @@
         private System.Windows.Forms.Button ConfirmButton;
         private System.Windows.Forms.ColumnHeader HorseNameColumn;
         private System.Windows.Forms.ColumnHeader HorseImageColumn;
+        private System.Windows.Forms.ImageList FHorseImageList;
     }
 }

@@ -58,6 +58,8 @@
     <Compile Include="Forms\ClearForm.Designer.cs">
       <DependentUpon>ClearForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormTransition.cs" />
+    <Compile Include="Forms\DisplayHelper.cs" />
     <Compile Include="Forms\HorseSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
