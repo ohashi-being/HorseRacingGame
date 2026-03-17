@@ -52,6 +52,10 @@ namespace PocketDerby {
             using (var wBetForm = new BetForm(this.FGameManager, wSelectedHorse)) {
                 this.Hide();
                 wBetForm.ShowDialog();
+
+                if (wBetForm.DialogResult == DialogResult.OK) {
+                    return;
+                }
                 this.Show();
             }
 

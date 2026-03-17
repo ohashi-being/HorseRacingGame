@@ -100,6 +100,7 @@ namespace PocketDerby {
                 return;
             }
 
+            this.DialogResult = DialogResult.OK;
             this.GoNextForm(new TicketForm(this.FGameManager));
         }
 
