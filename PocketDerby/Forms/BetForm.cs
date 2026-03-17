@@ -30,7 +30,21 @@ namespace PocketDerby {
         /// 掛け金入力画面から購入馬券表示画面へ遷移する
         /// </summary>
         private void ConfirmButton_Click(object sender, EventArgs e) {
-            this.GoNextForm(new TicketForm());
+
+            int wBetAmount = (int)this.BetNumericUpDown.Value;
+
+            if (wBetAmount == 0) {
+                MessageBox.Show("賭け金を入力してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!this.FGameManager.TryBuyTicket(this.FSelectedHorse, wBetAmount, out string wErrorMessage)) {
+                MessageBox.Show(wErrorMessage, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            this.DialogResult = DialogResult.OK;
+            this.GoNextForm(new TicketForm(this.FGameManager));
         }
 
         /// <summary>
