@@ -48,9 +48,7 @@ namespace PocketDerby {
 
             var wSelectedHorse = (Horse)this.ListView.SelectedItems[0].Tag;
 
-            var wBetForm = new BetForm(this.FGameManager, wSelectedHorse);
-            this.Hide();
-            wBetForm.ShowDialog();
+            this.GoNextForm(new BetForm(this.FGameManager, wSelectedHorse));
 
             this.Show();
 
