@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using PocketDerby.Forms;
 using PocketDerby.Model;
@@ -29,11 +30,11 @@ namespace PocketDerby {
         /// 馬の画像をImageListに読み込む設定を行う
         /// </summary>
         private void SetupHorseImageList() {
-            this.FHorseImageList.Images.Add("Horse1", Properties.Resources.Horse1);
-            this.FHorseImageList.Images.Add("Horse2", Properties.Resources.Horse2);
-            this.FHorseImageList.Images.Add("Horse3", Properties.Resources.Horse3);
-            this.FHorseImageList.Images.Add("Horse4", Properties.Resources.Horse4);
-            this.FHorseImageList.Images.Add("Horse5", Properties.Resources.Horse5);
+            for (int i = 1 ; i <= RaceRegulation.C_HorseCount ; i++) {
+                string wKey = $"Horse{i}";
+                var wImage = (Image)Properties.Resources.ResourceManager.GetObject(wKey);
+                this.FHorseImageList.Images.Add(wKey, wImage);
+            }
         }
 
         /// <summary>
@@ -48,9 +49,11 @@ namespace PocketDerby {
 
             var wSelectedHorse = (Horse)this.ListView.SelectedItems[0].Tag;
 
-            this.GoNextForm(new BetForm(this.FGameManager, wSelectedHorse));
-
-            this.Show();
+            using (var wBetForm = new BetForm(this.FGameManager, wSelectedHorse)) {
+                this.Hide();
+                wBetForm.ShowDialog();
+                this.Show();
+            }
 
             UpdateMoneyLabel();
         }
@@ -61,7 +64,7 @@ namespace PocketDerby {
         private void HorseSelectForm_Load(object sender, EventArgs e) {
 
             if (this.FGameManager.CurrentHorses == null || this.FGameManager.CurrentHorses.Count == 0) {
-                this.FGameManager.SetupNewRace(5);
+                this.FGameManager.SetupNewRace(RaceRegulation.C_HorseCount);
             }
 
             UpdateMoneyLabel();
@@ -87,7 +90,7 @@ namespace PocketDerby {
         /// <returns>リストビューの1行分</returns>
         private ListViewItem CreateHorseListItem(Horse vHorse) {
             var wItem = new ListViewItem("", $"Horse{vHorse.Number}");
-            wItem.SubItems.Add(FormUtility.GetCircleNumber(vHorse.Number));
+            wItem.SubItems.Add(DisplayHelper.GetCircleNumber(vHorse.Number));
             wItem.SubItems.Add(vHorse.Name);
             wItem.SubItems.Add(vHorse.Speed.ToString());
             wItem.SubItems.Add(vHorse.Luck.ToString());

@@ -72,7 +72,7 @@
             // HorseNameColumn
             // 
             this.HorseNameColumn.Text = "馬名";
-            this.HorseNameColumn.Width = 180;
+            this.HorseNameColumn.Width = 195;
             // 
             // SpeedColumn
             // 
@@ -82,14 +82,14 @@
             // LuckColumn
             // 
             this.LuckColumn.Text = "運の良さ";
-            this.LuckColumn.Width = 120;
+            this.LuckColumn.Width = 110;
             // 
             // OddsColumn
             // 
             this.OddsColumn.Text = "オッズ";
             this.OddsColumn.Width = 90;
             // 
-            // FHorse1ImageList
+            // FHorseImageList
             // 
             this.FHorseImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.FHorseImageList.ImageSize = new System.Drawing.Size(80, 58);

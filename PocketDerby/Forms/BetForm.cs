@@ -37,7 +37,7 @@ namespace PocketDerby {
         /// 掛け金入力画面から馬選択画面へ遷移する
         /// </summary>
         private void BackButton_Click(object sender, EventArgs e) {
-            this.GoNextForm(new HorseSelectForm(FGameManager));
+            this.Close();
         }
 
     }

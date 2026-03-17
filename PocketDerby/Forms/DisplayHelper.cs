@@ -1,5 +1,8 @@
 ﻿namespace PocketDerby.Forms {
-    internal static class FormUtility {
+    /// <summary>
+    /// 表示に関するユーティリティクラス
+    /// </summary>
+    internal static class DisplayHelper {
         /// <summary>
         /// 数字を丸数字に変換する
         /// </summary>
