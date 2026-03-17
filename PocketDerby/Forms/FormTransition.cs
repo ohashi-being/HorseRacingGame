@@ -12,9 +12,11 @@ namespace PocketDerby {
         /// <param name="vCurrentForm">現在表示中のフォーム</param>
         /// <param name="vNextForm">次に表示するフォーム</param>
         public static void GoNextForm(this Form vCurrentForm, Form vNextForm) {
-            vCurrentForm.Hide();
-            vNextForm.ShowDialog();
-            vCurrentForm.Close();
+            using (vNextForm) {
+                vCurrentForm.Hide();
+                vNextForm.ShowDialog();
+                vCurrentForm.Close();
+            }
         }
     }
 }

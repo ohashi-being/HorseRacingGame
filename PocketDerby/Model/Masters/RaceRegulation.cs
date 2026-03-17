@@ -5,6 +5,11 @@
     internal static class RaceRegulation {
 
         /// <summary>
+        /// 出走する馬の数
+        /// </summary>
+        public const int C_HorseCount = 5;
+
+        /// <summary>
         /// コースの長さ
         /// </summary>
         public const double C_CourseLength = 614.0;

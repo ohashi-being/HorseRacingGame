@@ -148,4 +148,19 @@
   <data name="ChatGPT Image 2026年2月9日 10_43_34" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChatGPT Image 2026年2月9日 10_43_34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Horse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horse1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Horse2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horse2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Horse3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horse3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Horse4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horse4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Horse5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Horse5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

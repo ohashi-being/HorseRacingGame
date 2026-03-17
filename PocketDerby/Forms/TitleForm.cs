@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using PocketDerby.Model;
 
 namespace PocketDerby {
     public partial class TitleForm : Form {
@@ -11,7 +12,7 @@ namespace PocketDerby {
         /// タイトル画面から馬選択画面へ遷移する
         /// </summary>
         private void StartButton_Click(object sender, EventArgs e) {
-            this.GoNextForm(new HorseSelectForm());
+            this.GoNextForm(new HorseSelectForm(new GameManager()));
         }
     }
 }
