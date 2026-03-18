@@ -40,6 +40,7 @@
             this.BetNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.HorseNameLabel = new System.Windows.Forms.Label();
             this.PayoutLabel = new System.Windows.Forms.Label();
+            this.PayoutValueLabel = new System.Windows.Forms.Label();
             this.TableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetNumericUpDown)).BeginInit();
@@ -218,7 +219,6 @@
             this.BetNumericUpDown.Name = "BetNumericUpDown";
             this.BetNumericUpDown.Size = new System.Drawing.Size(143, 28);
             this.BetNumericUpDown.TabIndex = 4;
-            this.BetNumericUpDown.ValueChanged += new System.EventHandler(this.BetNumericUpDown_ValueChanged);
             // 
             // HorseNameLabel
             // 
@@ -236,9 +236,19 @@
             this.PayoutLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.PayoutLabel.Location = new System.Drawing.Point(132, 379);
             this.PayoutLabel.Name = "PayoutLabel";
-            this.PayoutLabel.Size = new System.Drawing.Size(333, 37);
+            this.PayoutLabel.Size = new System.Drawing.Size(134, 37);
             this.PayoutLabel.TabIndex = 14;
-            this.PayoutLabel.Text = "払戻金        円";
+            this.PayoutLabel.Text = "払戻金";
+            // 
+            // PayoutValueLabel
+            // 
+            this.PayoutValueLabel.AutoSize = true;
+            this.PayoutValueLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.PayoutValueLabel.Location = new System.Drawing.Point(412, 379);
+            this.PayoutValueLabel.Name = "PayoutValueLabel";
+            this.PayoutValueLabel.Size = new System.Drawing.Size(156, 37);
+            this.PayoutValueLabel.TabIndex = 15;
+            this.PayoutValueLabel.Text = "10000円";
             // 
             // BetForm
             // 
@@ -247,6 +257,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.HorsePictureBox);
+            this.Controls.Add(this.PayoutValueLabel);
             this.Controls.Add(this.PayoutLabel);
             this.Controls.Add(this.HorseNameLabel);
             this.Controls.Add(this.TitleLabel);
@@ -259,7 +270,6 @@
             this.Controls.Add(this.CurrentMoneyLabel);
             this.Name = "BetForm";
             this.Text = "ポケットダービー";
-            this.Load += new System.EventHandler(this.BetForm_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetNumericUpDown)).EndInit();
@@ -280,6 +290,7 @@
         private System.Windows.Forms.NumericUpDown BetNumericUpDown;
         private System.Windows.Forms.Label HorseNameLabel;
         private System.Windows.Forms.Label PayoutLabel;
+        private System.Windows.Forms.Label PayoutValueLabel;
         private System.Windows.Forms.Label SpeedLabel;
         private System.Windows.Forms.Label LuckLabel;
         private System.Windows.Forms.Label OddsLabel;

@@ -7,12 +7,12 @@
         /// <summary>
         /// 賭け金の最小値
         /// </summary>
-        public const int C_MinBetAmount = 100;
+        private const int C_MinBetAmount = 100;
 
         /// <summary>
         /// 賭け金の単位
         /// </summary>
-        public const int C_BetAmountUnit = 100;
+        private const int C_BetAmountUnit = 100;
 
         /// <summary>
         /// 賭け金が有効かどうかを検証する

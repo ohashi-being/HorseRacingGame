@@ -21,7 +21,7 @@ namespace PocketDerby.Model {
         /// <summary>
         /// 現在のレースデータ
         /// </summary>
-        public RaceData CurrentRaceData { get; private set; }
+        private RaceData CurrentRaceData { get; set; }
 
         /// <summary>
         /// 現在のレース進行管理

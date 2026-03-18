@@ -38,7 +38,7 @@
             this.TrapLabel = new System.Windows.Forms.Label();
             this.TicketPanel = new System.Windows.Forms.Panel();
             this.ORALabel = new System.Windows.Forms.Label();
-            this.HorseNameLabel = new System.Windows.Forms.Label();
+            this.HouseNameLabel = new System.Windows.Forms.Label();
             this.BetLabel = new System.Windows.Forms.Label();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
             this.BetTypeLabel = new System.Windows.Forms.Label();
@@ -211,7 +211,7 @@
             this.TicketPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.TicketPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TicketPanel.Controls.Add(this.ORALabel);
-            this.TicketPanel.Controls.Add(this.HorseNameLabel);
+            this.TicketPanel.Controls.Add(this.HouseNameLabel);
             this.TicketPanel.Controls.Add(this.BetLabel);
             this.TicketPanel.Controls.Add(this.HorseNumberLabel);
             this.TicketPanel.Controls.Add(this.BetTypeLabel);
@@ -231,15 +231,16 @@
             this.ORALabel.TabIndex = 5;
             this.ORALabel.Text = "ORA";
             // 
-            // HorseNameLabel
+            // HouseNameLabel
             // 
-            this.HorseNameLabel.AutoSize = true;
-            this.HorseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HorseNameLabel.Location = new System.Drawing.Point(121, 61);
-            this.HorseNameLabel.Name = "HorseNameLabel";
-            this.HorseNameLabel.Size = new System.Drawing.Size(117, 24);
-            this.HorseNameLabel.TabIndex = 4;
-            this.HorseNameLabel.Text = "ガイアフォース";
+            this.HouseNameLabel.AutoSize = true;
+            this.HouseNameLabel.Cursor = System.Windows.Forms.Cursors.UpArrow;
+            this.HouseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.HouseNameLabel.Location = new System.Drawing.Point(121, 61);
+            this.HouseNameLabel.Name = "HouseNameLabel";
+            this.HouseNameLabel.Size = new System.Drawing.Size(117, 24);
+            this.HouseNameLabel.TabIndex = 4;
+            this.HouseNameLabel.Text = "ガイアフォース";
             // 
             // BetLabel
             // 
@@ -318,7 +319,7 @@
         private System.Windows.Forms.PictureBox Horse3PictureBox;
         private System.Windows.Forms.Panel TicketPanel;
         private System.Windows.Forms.Label ORALabel;
-        private System.Windows.Forms.Label HorseNameLabel;
+        private System.Windows.Forms.Label HouseNameLabel;
         private System.Windows.Forms.Label BetLabel;
         private System.Windows.Forms.Label HorseNumberLabel;
         private System.Windows.Forms.Label BetTypeLabel;
