@@ -82,12 +82,11 @@
             this.ORALabel.TabIndex = 5;
             this.ORALabel.Text = "ORA";
             // 
-            // HouseNameLabel
+            // HorseNameLabel
             // 
-            this.HorseNameLabel.Cursor = System.Windows.Forms.Cursors.UpArrow;
             this.HorseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.HorseNameLabel.Location = new System.Drawing.Point(125, 84);
-            this.HorseNameLabel.Name = "HouseNameLabel";
+            this.HorseNameLabel.Name = "HorseNameLabel";
             this.HorseNameLabel.Size = new System.Drawing.Size(263, 47);
             this.HorseNameLabel.TabIndex = 4;
             this.HorseNameLabel.Text = "ガイアフォース";
