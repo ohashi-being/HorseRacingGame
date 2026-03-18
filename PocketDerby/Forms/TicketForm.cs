@@ -3,6 +3,9 @@ using System.Windows.Forms;
 using PocketDerby.Model;
 
 namespace PocketDerby {
+    /// <summary>
+    /// 購入馬券表示画面クラス
+    /// </summary>
     internal partial class TicketForm : Form {
 
         /// <summary>
