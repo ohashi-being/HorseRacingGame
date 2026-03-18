@@ -1,5 +1,5 @@
-﻿using System;
-﻿using System.Windows.Forms;
+using System;
+using System.Windows.Forms;
 using PocketDerby.Model;
 
 namespace PocketDerby {

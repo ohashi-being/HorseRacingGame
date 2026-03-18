@@ -103,11 +103,7 @@ namespace PocketDerby {
                 return;
             }
 
-            var wNextForm = new TicketForm(this.FGameManager);
-            this.Hide();
-            wNextForm.ShowDialog();
-            this.Close();
-
+            this.GoNextForm(new TicketForm(this.FGameManager));
         }
 
         /// <summary>
