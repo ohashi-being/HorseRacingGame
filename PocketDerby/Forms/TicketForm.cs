@@ -8,7 +8,7 @@ namespace PocketDerby {
         /// <summary>
         /// ゲーム全体を管理するGameManagerインスタンス
         /// </summary>
-        private GameManager FGameManager;
+        private readonly GameManager FGameManager;
 
         /// <summary>
         /// コンストラクタ

@@ -31,7 +31,6 @@ namespace PocketDerby {
             this.FSelectedHorse = vSelectedHorse;
 
             this.BetNumericUpDown.Minimum = BetCalculator.C_MinBetAmount;
-            this.BetNumericUpDown.Increment = BetCalculator.C_BetAmountUnit;
         }
 
         /// <summary>
@@ -56,7 +55,6 @@ namespace PocketDerby {
 
             if (Properties.Resources.ResourceManager.GetObject($"Horse{this.FSelectedHorse.Number}") is Image wImage) {
                 this.HorsePictureBox.Image = wImage;
-                this.HorsePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
