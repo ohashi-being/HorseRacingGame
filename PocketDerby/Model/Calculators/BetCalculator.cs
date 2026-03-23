@@ -1,4 +1,6 @@
-﻿namespace PocketDerby.Model {
+﻿using System;
+
+namespace PocketDerby.Model {
     /// <summary>
     /// 賭け金の計算を行うクラス
     /// </summary>
@@ -36,7 +38,7 @@
         /// <param name="vOdds">的中した馬のオッズ</param>
         /// <returns>払戻金</returns>
         public static int CalculatePayout(int vBetAmount, double vOdds) {
-            return (int)(vBetAmount * vOdds);
+            return (int)Math.Round(vBetAmount * vOdds / 10) * 10;
         }
     }
 }

@@ -63,86 +63,6 @@ namespace PocketDerby.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_33_22 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_33_22", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_38_31 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_38_31", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_38_32 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_38_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_43_31 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_43_31", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_43_311 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_43_311", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap ChatGPT_Image_2026年2月9日_10_43_34 {
-            get {
-                object obj = ResourceManager.GetObject("ChatGPT Image 2026年2月9日 10_43_34", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Gemini_Generated_Image_fasqg6fasqg6fasq {
-            get {
-                object obj = ResourceManager.GetObject("Gemini_Generated_Image_fasqg6fasqg6fasq", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap Gemini_Generated_Image_sb7d3wsb7d3wsb7d {
-            get {
-                object obj = ResourceManager.GetObject("Gemini_Generated_Image_sb7d3wsb7d3wsb7d", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap Horse1 {
             get {
                 object obj = ResourceManager.GetObject("Horse1", resourceCulture);
@@ -186,26 +106,6 @@ namespace PocketDerby.Properties {
         internal static System.Drawing.Bitmap Horse5 {
             get {
                 object obj = ResourceManager.GetObject("Horse5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap 丸い枠の中の馬の顔 {
-            get {
-                object obj = ResourceManager.GetObject("丸い枠の中の馬の顔", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap 優雅な馬と和風の花 {
-            get {
-                object obj = ResourceManager.GetObject("優雅な馬と和風の花", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
