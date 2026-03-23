@@ -49,7 +49,7 @@ namespace PocketDerby.Model {
 
             for (int i = 0 ; i < vHorses.Count ; i++) {
                 double wRawOdds = (wEffectiveSpeedAverage / wEffectiveSpeeds[i]) * C_OddsCoefficient;
-                vHorses[i].Odds = Math.Max(Math.Round(wRawOdds, 2), C_MinimumOdds);
+                vHorses[i].Odds = Math.Max(Math.Round(wRawOdds, 1), C_MinimumOdds);
             }
         }
 
