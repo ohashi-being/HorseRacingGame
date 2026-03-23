@@ -13,11 +13,11 @@ namespace PocketDerby {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="vGameManeger">ゲーム全体を管理するGameManagerインスタンス</param>
-        public TicketForm(GameManager vGameManeger) {
+        /// <param name="vGameManager">ゲーム全体を管理するGameManagerインスタンス</param>
+        public TicketForm(GameManager vGameManager) {
             InitializeComponent();
 
-            this.FGameManager = vGameManeger;
+            this.FGameManager = vGameManager;
         }
 
         /// <summary>

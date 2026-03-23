@@ -71,7 +71,21 @@ namespace PocketDerby {
         /// 賭け金の値が変更されたときに呼び出されるイベントハンドラ
         /// </summary>
         private void BetNumericUpDown_ValueChanged(object sender, EventArgs e) {
+            RoundBetAmount();
             UpdatePayoutLabel();
+        }
+
+        /// <summary>
+        /// 賭け金の単位に丸める
+        /// </summary>
+        private void RoundBetAmount() {
+            int wBetAmount = (int)this.BetNumericUpDown.Value;
+            int wRoundedBetAmount = (wBetAmount / BetCalculator.C_BetAmountUnit) * BetCalculator.C_BetAmountUnit;
+            var wRounded = Math.Max(wRoundedBetAmount, BetCalculator.C_MinBetAmount);
+
+            if (wBetAmount != wRounded) {
+                this.BetNumericUpDown.Value = wRounded;
+            }
         }
 
         /// <summary>
@@ -88,15 +102,7 @@ namespace PocketDerby {
         /// </summary>
         private void ConfirmButton_Click(object sender, EventArgs e) {
 
-            this.GoNextForm(new TicketForm(this.FGameManager));
-
-
             int wBetAmount = (int)this.BetNumericUpDown.Value;
-
-            if (wBetAmount == 0) {
-                MessageBox.Show("賭け金を入力してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             if (!this.FGameManager.TryBuyTicket(this.FSelectedHorse, wBetAmount, out string wErrorMessage)) {
                 MessageBox.Show(wErrorMessage, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);

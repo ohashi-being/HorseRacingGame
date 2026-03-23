@@ -18,7 +18,7 @@ namespace PocketDerby {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="vGameManager">ゲーム全体を管理するGameManegerインスタンス</param>
+        /// <param name="vGameManager">ゲーム全体を管理するGameManagerインスタンス</param>
         internal HorseSelectForm(GameManager vGameManager) {
             InitializeComponent();
             this.FGameManager = vGameManager;
