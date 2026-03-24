@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.TrackPanel = new System.Windows.Forms.Panel();
             this.GoalPanel = new System.Windows.Forms.Panel();
             this.Lane5Panel = new System.Windows.Forms.Panel();
@@ -42,6 +43,8 @@
             this.BetLabel = new System.Windows.Forms.Label();
             this.HorseNumberLabel = new System.Windows.Forms.Label();
             this.BetTypeLabel = new System.Windows.Forms.Label();
+            this.RaceTimer = new System.Windows.Forms.Timer(this.components);
+            this.TrapDisplayTimer = new System.Windows.Forms.Timer(this.components);
             this.TrackPanel.SuspendLayout();
             this.Lane5Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Horse5PictureBox)).BeginInit();
@@ -198,10 +201,10 @@
             // TrapLabel
             // 
             this.TrapLabel.AutoSize = true;
-            this.TrapLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TrapLabel.Location = new System.Drawing.Point(41, 363);
+            this.TrapLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TrapLabel.Location = new System.Drawing.Point(12, 363);
             this.TrapLabel.Name = "TrapLabel";
-            this.TrapLabel.Size = new System.Drawing.Size(433, 27);
+            this.TrapLabel.Size = new System.Drawing.Size(344, 21);
             this.TrapLabel.TabIndex = 5;
             this.TrapLabel.Text = "おっと！3番の馬の気性が荒い！";
             // 
@@ -216,9 +219,9 @@
             this.TicketPanel.Controls.Add(this.HorseNumberLabel);
             this.TicketPanel.Controls.Add(this.BetTypeLabel);
             this.TicketPanel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.TicketPanel.Location = new System.Drawing.Point(470, 382);
+            this.TicketPanel.Location = new System.Drawing.Point(531, 375);
             this.TicketPanel.Name = "TicketPanel";
-            this.TicketPanel.Size = new System.Drawing.Size(268, 141);
+            this.TicketPanel.Size = new System.Drawing.Size(241, 148);
             this.TicketPanel.TabIndex = 16;
             // 
             // ORALabel
@@ -233,13 +236,13 @@
             // 
             // HorseNameLabel
             // 
-            this.HorseNameLabel.AutoSize = true;
             this.HorseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.HorseNameLabel.Location = new System.Drawing.Point(121, 61);
+            this.HorseNameLabel.Location = new System.Drawing.Point(99, 61);
             this.HorseNameLabel.Name = "HorseNameLabel";
-            this.HorseNameLabel.Size = new System.Drawing.Size(117, 24);
+            this.HorseNameLabel.Size = new System.Drawing.Size(137, 24);
             this.HorseNameLabel.TabIndex = 4;
             this.HorseNameLabel.Text = "ガイアフォース";
+            this.HorseNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BetLabel
             // 
@@ -272,6 +275,15 @@
             this.BetTypeLabel.TabIndex = 0;
             this.BetTypeLabel.Text = "単\n勝";
             // 
+            // RaceTimer
+            // 
+            this.RaceTimer.Tick += new System.EventHandler(this.RaceTimer_Tick);
+            // 
+            // TrapDisplayTimer
+            // 
+            this.TrapDisplayTimer.Interval = 2000;
+            this.TrapDisplayTimer.Tick += new System.EventHandler(this.TrapDisplayTimer_Tick);
+            // 
             // RaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -283,6 +295,7 @@
             this.Controls.Add(this.TrackPanel);
             this.Name = "RaceForm";
             this.Text = "ポケットダービー";
+            this.Load += new System.EventHandler(this.RaceForm_Load);
             this.TrackPanel.ResumeLayout(false);
             this.Lane5Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Horse5PictureBox)).EndInit();
@@ -322,5 +335,7 @@
         private System.Windows.Forms.Label BetLabel;
         private System.Windows.Forms.Label HorseNumberLabel;
         private System.Windows.Forms.Label BetTypeLabel;
+        private System.Windows.Forms.Timer RaceTimer;
+        private System.Windows.Forms.Timer TrapDisplayTimer;
     }
 }
