@@ -259,6 +259,7 @@
             this.Controls.Add(this.CurrentMoneyLabel);
             this.Name = "BetForm";
             this.Text = "ポケットダービー";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BetForm_FormClosed);
             this.Load += new System.EventHandler(this.BetForm_Load);
             this.TableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HorsePictureBox)).EndInit();

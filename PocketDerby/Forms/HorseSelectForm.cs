@@ -54,11 +54,15 @@ namespace PocketDerby {
                 wBetForm.ShowDialog();
 
                 if (wBetForm.DialogResult == DialogResult.OK) {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                     return;
+                } else if (wBetForm.DialogResult == DialogResult.Retry) {
+                    this.Show();
+                    UpdateMoneyLabel();
                 }
-                this.Show();
             }
-
+            this.Show();
             UpdateMoneyLabel();
         }
 
@@ -67,9 +71,7 @@ namespace PocketDerby {
         /// </summary>
         private void HorseSelectForm_Load(object sender, EventArgs e) {
 
-            if (this.FGameManager.CurrentHorses == null || this.FGameManager.CurrentHorses.Count == 0) {
-                this.FGameManager.SetupNewRace(RaceRegulation.C_HorseCount);
-            }
+            this.FGameManager.SetupNewRace(RaceRegulation.C_HorseCount);
 
             UpdateMoneyLabel();
             LoadHorseList();
