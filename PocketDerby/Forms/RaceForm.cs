@@ -41,11 +41,8 @@ namespace PocketDerby {
         /// </summary>
         private void RaceForm_Load(object sender, EventArgs e) {
             this.TrapLabel.Text = "";
-
             SetupTicketInfo();
-
             this.FGameManager.StartRace();
-
             this.RaceTimer.Start();
         }
 
