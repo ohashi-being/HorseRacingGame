@@ -128,18 +128,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -148,36 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\優雅な馬と和風の花.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\丸い枠の中の馬の顔.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_sb7d3wsb7d3wsb7d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Gemini_Generated_Image_fasqg6fasqg6fasq.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_33_22.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_38_31.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_38_32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_43_31.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_43_311.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ChatGPT Image 2026年2月9日 10_43_34.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Horse1.png" />
