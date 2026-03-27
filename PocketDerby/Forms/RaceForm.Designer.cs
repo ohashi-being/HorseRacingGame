@@ -96,7 +96,7 @@
             // Horse5PictureBox
             // 
             this.Horse5PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse5PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_34;
+            this.Horse5PictureBox.Image = global::PocketDerby.Properties.Resources.Horse5;
             this.Horse5PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse5PictureBox.Name = "Horse5PictureBox";
             this.Horse5PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -119,7 +119,7 @@
             // Horse4PictureBox
             // 
             this.Horse4PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse4PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_43_311;
+            this.Horse4PictureBox.Image = global::PocketDerby.Properties.Resources.Horse4;
             this.Horse4PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse4PictureBox.Name = "Horse4PictureBox";
             this.Horse4PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -142,7 +142,7 @@
             // Horse3PictureBox
             // 
             this.Horse3PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse3PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_32;
+            this.Horse3PictureBox.Image = global::PocketDerby.Properties.Resources.Horse3;
             this.Horse3PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse3PictureBox.Name = "Horse3PictureBox";
             this.Horse3PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -165,7 +165,7 @@
             // Horse2PictureBox
             // 
             this.Horse2PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse2PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_38_31;
+            this.Horse2PictureBox.Image = global::PocketDerby.Properties.Resources.Horse2;
             this.Horse2PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse2PictureBox.Name = "Horse2PictureBox";
             this.Horse2PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -189,7 +189,7 @@
             // Horse1PictureBox
             // 
             this.Horse1PictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.Horse1PictureBox.Image = global::PocketDerby.Properties.Resources.ChatGPT_Image_2026年2月9日_10_33_22;
+            this.Horse1PictureBox.Image = global::PocketDerby.Properties.Resources.Horse1;
             this.Horse1PictureBox.Location = new System.Drawing.Point(20, 2);
             this.Horse1PictureBox.Name = "Horse1PictureBox";
             this.Horse1PictureBox.Padding = new System.Windows.Forms.Padding(750, 5, 0, 0);
@@ -202,7 +202,11 @@
             // 
             this.TrapLabel.AutoSize = true;
             this.TrapLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+<<<<<<< feature/#602526
             this.TrapLabel.Location = new System.Drawing.Point(12, 363);
+=======
+            this.TrapLabel.Location = new System.Drawing.Point(12, 366);
+>>>>>>> develop
             this.TrapLabel.Name = "TrapLabel";
             this.TrapLabel.Size = new System.Drawing.Size(344, 21);
             this.TrapLabel.TabIndex = 5;
@@ -219,9 +223,15 @@
             this.TicketPanel.Controls.Add(this.HorseNumberLabel);
             this.TicketPanel.Controls.Add(this.BetTypeLabel);
             this.TicketPanel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+<<<<<<< feature/#602526
             this.TicketPanel.Location = new System.Drawing.Point(531, 375);
             this.TicketPanel.Name = "TicketPanel";
             this.TicketPanel.Size = new System.Drawing.Size(241, 148);
+=======
+            this.TicketPanel.Location = new System.Drawing.Point(528, 386);
+            this.TicketPanel.Name = "TicketPanel";
+            this.TicketPanel.Size = new System.Drawing.Size(244, 137);
+>>>>>>> develop
             this.TicketPanel.TabIndex = 16;
             // 
             // ORALabel
@@ -237,9 +247,15 @@
             // HorseNameLabel
             // 
             this.HorseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+<<<<<<< feature/#602526
             this.HorseNameLabel.Location = new System.Drawing.Point(99, 61);
             this.HorseNameLabel.Name = "HorseNameLabel";
             this.HorseNameLabel.Size = new System.Drawing.Size(137, 24);
+=======
+            this.HorseNameLabel.Location = new System.Drawing.Point(94, 61);
+            this.HorseNameLabel.Name = "HorseNameLabel";
+            this.HorseNameLabel.Size = new System.Drawing.Size(144, 24);
+>>>>>>> develop
             this.HorseNameLabel.TabIndex = 4;
             this.HorseNameLabel.Text = "ガイアフォース";
             this.HorseNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -295,7 +311,10 @@
             this.Controls.Add(this.TrackPanel);
             this.Name = "RaceForm";
             this.Text = "ポケットダービー";
+<<<<<<< feature/#602526
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RaceForm_FormClosed);
+=======
+>>>>>>> develop
             this.Load += new System.EventHandler(this.RaceForm_Load);
             this.TrackPanel.ResumeLayout(false);
             this.Lane5Panel.ResumeLayout(false);
