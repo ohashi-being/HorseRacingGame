@@ -71,13 +71,13 @@ namespace PocketDerby {
             this.FGameManager.SetupNewRace(RaceRegulation.C_HorseCount);
 
             UpdateMoneyLabel();
-            SetupHorseList();
+            SetupHorseListView();
         }
 
         /// <summary>
         /// 現在の出走馬情報をリストビューに表示する
         /// </summary>
-        private void SetupHorseList() {
+        private void SetupHorseListView() {
             this.ListView.Items.Clear();
 
             foreach (var wHorse in this.FGameManager.CurrentHorses) {
