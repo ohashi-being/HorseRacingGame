@@ -115,7 +115,22 @@ namespace PocketDerby {
         /// レース終了後、結果画面へ遷移する
         /// </summary>
         private void GoToResultForm() {
-            this.GoNextForm(new ResultForm());
+            var wResultForm = new ResultForm(this.FGameManager);
+            this.Hide();
+            wResultForm.ShowDialog();
+
+            if (wResultForm.DialogResult == DialogResult.OK) {
+                this.DialogResult = DialogResult.OK;
+            }
+
+            this.Close();
+        }
+
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void RaceForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.DialogResult != DialogResult.OK) Application.Exit();
         }
     }
 }

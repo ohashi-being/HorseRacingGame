@@ -14,5 +14,12 @@ namespace PocketDerby {
         private void StartButton_Click(object sender, EventArgs e) {
             this.GoNextForm(new HorseSelectForm(new GameManager()));
         }
+
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void TitleForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
     }
 }

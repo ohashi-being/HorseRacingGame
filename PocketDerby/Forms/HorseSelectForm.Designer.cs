@@ -138,7 +138,8 @@
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.ListView);
             this.Name = "HorseSelectForm";
-            this.Text = "HorseSelectForm";
+            this.Text = "ポケットダービー";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HorseSelectForm_FormClosed);
             this.Load += new System.EventHandler(this.HorseSelectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

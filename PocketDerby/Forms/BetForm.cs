@@ -109,15 +109,25 @@ namespace PocketDerby {
                 return;
             }
 
-            this.GoNextForm(new TicketForm(this.FGameManager));
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         /// <summary>
         /// 掛け金入力画面から馬選択画面へ遷移する
         /// </summary>
         private void BackButton_Click(object sender, EventArgs e) {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void BetForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.DialogResult != DialogResult.OK && this.DialogResult != DialogResult.Cancel) {
+                Application.Exit();
+            }
+        }
     }
 }

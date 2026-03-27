@@ -49,7 +49,26 @@ namespace PocketDerby {
         /// 購入馬券表示画面からレース画面へ遷移する
         /// </summary>
         private void GoRaceButton_Click(object sender, EventArgs e) {
+<<<<<<< feature/#602526
+            var wRaceForm = new RaceForm(this.FGameManager);
+            this.Hide();
+            wRaceForm.ShowDialog();
+
+            if (wRaceForm.DialogResult == DialogResult.OK) {
+                this.DialogResult = DialogResult.OK;
+            }
+
+            this.Close();
+        }
+
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void TicketForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.DialogResult != DialogResult.OK) Application.Exit();
+=======
             this.GoNextForm(new RaceForm(this.FGameManager));
+>>>>>>> develop
         }
     }
 }
