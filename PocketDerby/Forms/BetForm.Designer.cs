@@ -46,7 +46,7 @@
             this.SuspendLayout();
             // 
             // CurrentMoneyLabel
-            // 
+            //
             this.CurrentMoneyLabel.AutoSize = true;
             this.CurrentMoneyLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CurrentMoneyLabel.Location = new System.Drawing.Point(49, 459);

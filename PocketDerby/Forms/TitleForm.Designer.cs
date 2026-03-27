@@ -57,6 +57,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.StartpPanel);
             this.Name = "TitleForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TitleForm_FormClosed);
             this.StartpPanel.ResumeLayout(false);
             this.StartpPanel.PerformLayout();
             this.ResumeLayout(false);

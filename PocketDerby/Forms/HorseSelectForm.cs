@@ -55,11 +55,8 @@ namespace PocketDerby {
 
                 if (wBetForm.DialogResult == DialogResult.OK) {
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    this.GoNextForm(new TicketForm(this.FGameManager));
                     return;
-                } else if (wBetForm.DialogResult == DialogResult.Retry) {
-                    this.Show();
-                    UpdateMoneyLabel();
                 }
             }
             this.Show();
@@ -67,20 +64,20 @@ namespace PocketDerby {
         }
 
         /// <summary>
-        /// 現在の出走馬情報をリストビューに表示する
+        /// フォームがロードされたときに呼び出されるイベントハンドラ
         /// </summary>
         private void HorseSelectForm_Load(object sender, EventArgs e) {
 
             this.FGameManager.SetupNewRace(RaceRegulation.C_HorseCount);
 
             UpdateMoneyLabel();
-            LoadHorseList();
+            SetupHorseList();
         }
 
         /// <summary>
         /// 現在の出走馬情報をリストビューに表示する
         /// </summary>
-        private void LoadHorseList() {
+        private void SetupHorseList() {
             this.ListView.Items.Clear();
 
             foreach (var wHorse in this.FGameManager.CurrentHorses) {
@@ -111,6 +108,13 @@ namespace PocketDerby {
         /// </summary>
         private void UpdateMoneyLabel() {
             this.CurrentMoneyLabel.Text = $"所持金：{this.FGameManager.PlayerMoney.Money}円";
+        }
+
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void HorseSelectForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.DialogResult != DialogResult.OK) Application.Exit();
         }
     }
 }

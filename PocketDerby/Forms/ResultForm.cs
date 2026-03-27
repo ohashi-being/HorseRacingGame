@@ -35,17 +35,17 @@ namespace PocketDerby {
         /// レース結果を画面に表示する
         /// </summary>
         private void ShowRaceResult() {
-            SetUpListView();
+            SetupListView();
 
             int wPayout = this.FGameManager.ProcessRaceEnd();
 
-            SetUpPayoutDisplay(wPayout);
+            SetupPayoutDisplay(wPayout);
         }
 
         /// <summary>
         /// レース結果をListViewに表示する
         /// </summary>
-        private void SetUpListView() {
+        private void SetupListView() {
             var wRaceData = this.FGameManager.CurrentRaceData;
 
             for (int i = 0 ; i < wRaceData.RaceResults.Count ; i++) {
@@ -72,7 +72,7 @@ namespace PocketDerby {
         /// 払戻金の表示を更新する
         /// </summary>
         /// <param name="vPayout">払戻金</param>
-        private void SetUpPayoutDisplay(int vPayout) {
+        private void SetupPayoutDisplay(int vPayout) {
             if (vPayout > 0) {
                 this.HitStatusLabel.Text = "的中！";
                 this.HitStatusLabel.ForeColor = Color.Red;

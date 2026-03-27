@@ -295,6 +295,7 @@
             this.Controls.Add(this.TrackPanel);
             this.Name = "RaceForm";
             this.Text = "ポケットダービー";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RaceForm_FormClosed);
             this.Load += new System.EventHandler(this.RaceForm_Load);
             this.TrackPanel.ResumeLayout(false);
             this.Lane5Panel.ResumeLayout(false);

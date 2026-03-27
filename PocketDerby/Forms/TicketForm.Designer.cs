@@ -134,6 +134,7 @@
             this.Controls.Add(this.TitleLabel);
             this.Name = "TicketForm";
             this.Text = "ポケットダービー";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TicketForm_FormClosed);
             this.Load += new System.EventHandler(this.TicketForm_Load);
             this.TicketPanel.ResumeLayout(false);
             this.TicketPanel.PerformLayout();

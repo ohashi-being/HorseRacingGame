@@ -42,7 +42,7 @@ namespace PocketDerby {
         private void RaceForm_Load(object sender, EventArgs e) {
             this.TrapLabel.Text = "";
 
-            SetUpTicketInfo();
+            SetupTicketInfo();
 
             this.FGameManager.StartRace();
 
@@ -52,7 +52,7 @@ namespace PocketDerby {
         /// <summary>
         /// 購入した馬券情報を画面に表示する
         /// </summary>
-        private void SetUpTicketInfo() {
+        private void SetupTicketInfo() {
             var wRaceData = this.FGameManager.CurrentRaceData;
             this.HorseNumberLabel.Text = wRaceData.SelectedHorse.Number.ToString();
             this.HorseNameLabel.Text = wRaceData.SelectedHorse.Name;
@@ -118,7 +118,22 @@ namespace PocketDerby {
         /// レース終了後、結果画面へ遷移する
         /// </summary>
         private void GoToResultForm() {
-            this.GoNextForm(new ResultForm(this.FGameManager));
+            var wResultForm = new ResultForm(this.FGameManager);
+            this.Hide();
+            wResultForm.ShowDialog();
+
+            if (wResultForm.DialogResult == DialogResult.OK) {
+                this.DialogResult = DialogResult.OK;
+            }
+
+            this.Close();
+        }
+
+        /// <summary>
+        /// フォームが閉じられるときに呼び出されるイベントハンドラ
+        /// </summary>
+        private void RaceForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (this.DialogResult != DialogResult.OK) Application.Exit();
         }
     }
 }
