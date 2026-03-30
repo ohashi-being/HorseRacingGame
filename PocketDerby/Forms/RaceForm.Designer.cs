@@ -202,11 +202,7 @@
             // 
             this.TrapLabel.AutoSize = true;
             this.TrapLabel.Font = new System.Drawing.Font("HG創英角ﾎﾟｯﾌﾟ体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-<<<<<<< feature/#602526
             this.TrapLabel.Location = new System.Drawing.Point(12, 363);
-=======
-            this.TrapLabel.Location = new System.Drawing.Point(12, 366);
->>>>>>> develop
             this.TrapLabel.Name = "TrapLabel";
             this.TrapLabel.Size = new System.Drawing.Size(344, 21);
             this.TrapLabel.TabIndex = 5;
@@ -223,15 +219,9 @@
             this.TicketPanel.Controls.Add(this.HorseNumberLabel);
             this.TicketPanel.Controls.Add(this.BetTypeLabel);
             this.TicketPanel.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-<<<<<<< feature/#602526
             this.TicketPanel.Location = new System.Drawing.Point(531, 375);
             this.TicketPanel.Name = "TicketPanel";
             this.TicketPanel.Size = new System.Drawing.Size(241, 148);
-=======
-            this.TicketPanel.Location = new System.Drawing.Point(528, 386);
-            this.TicketPanel.Name = "TicketPanel";
-            this.TicketPanel.Size = new System.Drawing.Size(244, 137);
->>>>>>> develop
             this.TicketPanel.TabIndex = 16;
             // 
             // ORALabel
@@ -247,15 +237,9 @@
             // HorseNameLabel
             // 
             this.HorseNameLabel.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-<<<<<<< feature/#602526
             this.HorseNameLabel.Location = new System.Drawing.Point(99, 61);
             this.HorseNameLabel.Name = "HorseNameLabel";
             this.HorseNameLabel.Size = new System.Drawing.Size(137, 24);
-=======
-            this.HorseNameLabel.Location = new System.Drawing.Point(94, 61);
-            this.HorseNameLabel.Name = "HorseNameLabel";
-            this.HorseNameLabel.Size = new System.Drawing.Size(144, 24);
->>>>>>> develop
             this.HorseNameLabel.TabIndex = 4;
             this.HorseNameLabel.Text = "ガイアフォース";
             this.HorseNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,10 +295,7 @@
             this.Controls.Add(this.TrackPanel);
             this.Name = "RaceForm";
             this.Text = "ポケットダービー";
-<<<<<<< feature/#602526
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RaceForm_FormClosed);
-=======
->>>>>>> develop
             this.Load += new System.EventHandler(this.RaceForm_Load);
             this.TrackPanel.ResumeLayout(false);
             this.Lane5Panel.ResumeLayout(false);
